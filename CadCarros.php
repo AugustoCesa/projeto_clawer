@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Usuário</title>
+    <title>Cadastro de Carros</title>
     <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
 

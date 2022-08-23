@@ -1,5 +1,5 @@
 <?php
-include 'nav.php'
+include 'componentes/nav.php'
 ?>
 
 <main style="margin:20px; ">
@@ -56,5 +56,5 @@ include 'nav.php'
 
 
 <?php
-include 'footer.php'
+include 'componentes/footer.php'
 ?>
