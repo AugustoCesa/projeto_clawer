@@ -34,7 +34,7 @@ if (isset($_GET['id'])) {
     if ($sql->execute(array($codigo))) {
         $info = $sql->fetchAll(PDO::FETCH_ASSOC);
         foreach ($info as $key => $value) {
-            $codigo = $value['codigo'];
+            $codigo = $value['CodCarro'];
             $marca = $value['marca'];
             $nome = $value['nome'];
             $preco = $value['preco'];
@@ -142,8 +142,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                                                              imagem=?
                                                        WHERE CodCarro=?");
 
-                if ($sql->execute(array( 
-                    $codigo,$marca, $nome, $preco, $ano,$cambio,$portas, $combustivel, $kilometragem, $placa, $cor, $modelo,$imgContent))) {
+                if ($sql->execute(array(
+                    $codigo, $marca, $nome, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $modelo, $imgContent
+                ))) {
                     $msgErro = "Dados alterados com sucesso!";
                     header('location:listUsuario.php');
                 } else {
@@ -184,11 +185,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
             <br>
             Preço: <input type="text" name="preco" value="<?php echo $preco ?>">
             <span class="obrigatorio">*<?php echo $precoErro ?></span>
-            
+
             <br>
             ano: <input type="text" name="ano" value="<?php echo $ano ?>">
             <span class="obrigatorio">*<?php echo $anoErro ?></span>
-          
+
             <br>
             cambio: <input type="text" name="cambio" value="<?php echo $cambio ?>">
             <span class="obrigatorio">*<?php echo $cambioErro ?></span>
@@ -202,14 +203,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
             <span class="obrigatorio">*<?php echo $combustivelErro ?></span>
 
             <br>
-            kilometragem: <input type="text" name="kilometregem" value="<?php echo $kilometragem?>">
+            kilometragem: <input type="text" name="kilometregem" value="<?php echo $kilometragem ?>">
             <span class="obrigatorio">*<?php echo $kilometragemErro ?></span>
 
             <br>
             placa: <input type="text" name="placa" value="<?php echo $placa ?>">
             <span class="obrigatorio">*<?php echo $placaErro ?></span>
+            <br>
+            cor: <input type="text" name="cor" value="<?php echo $cor ?>">
+            <span class="obrigatorio">*<?php echo $corErro ?></span>
+            <br>
+            modelo: <input type="text" name="modelo" value="<?php echo $modelo ?>">
+            <span class="obrigatorio">*<?php echo $modeloErro ?></span>
 
-
+            <br>
             <input type="file" name="image">
             <br>
             <input type="submit" value="Salvar" name="submit">
