@@ -1,6 +1,6 @@
 <?php
-include "include/conBusca.php";
-include "componentes/nav.php"
+include "../include/conBusca.php";
+include "../componentes/nav.php"
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +84,7 @@ OR preco LIKE '%$pesquisa%'";
 
 
     <div class="fot" style="margin-top: 150px">
-        <?php include "componentes/footer.php" ?>
+        <?php include "../componentes/footer.php" ?>
     </div>
 </body>
 
