@@ -11,13 +11,9 @@ include 'componentes/nav.php'
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
 
-    <div class="carousel-inner" style="border-radius: 20px; width:1050px; border:solid gray 4px; ">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <img src="assets/images/chiron.png"  style="height: 600px; width:100%"class="d-block w-100" alt="...">
-
     <div class="carousel-inner" style="border-radius: 20px; width:1000px; border:solid #0C2A43 6px; ">
       <div class="carousel-item active" data-bs-interval="10000">
-        <img src="assets/images/chiron.png"  style="height: 600px; width:100%"class="d-block w-100 img-fluid" alt="...">
+        <img src="assets/images/chiron.png" style="height: 600px; width:100%" class="d-block w-100 img-fluid" alt="...">
 
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Quer comprar um carro novo?</h5>
@@ -29,8 +25,6 @@ include 'componentes/nav.php'
 
         <img src="assets/images/jesko.png" style="height: 600px; width:100%" class="d-block w-100" alt="...">
 
-        <img src="assets/images/jesko.png" style="height: 600px; width:100%" class="d-block w-100 img-fluid" alt="...">
-
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Ou quer alugar um carro?</h5>
           <p style="color: white;">Pra sua sorte, nós tambem alugamos</p>
@@ -40,8 +34,6 @@ include 'componentes/nav.php'
       <div class="carousel-item">
 
         <img src="assets/images/hellcat.png" style="height: 600px; width:100%" class="d-block w-100" alt="...">
-
-        <img src="assets/images/hellcat.png" style="height: 600px; width:100%" class="d-block w-100 img-fluid" alt="...">
 
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Marque um teste drive aqui</h5>
@@ -62,11 +54,9 @@ include 'componentes/nav.php'
 
   <div class="promoção" style="display: flex; justify-content:center">
 
-<h2 style="margin-top: 60px; text-align:center; color:white; border:#0C2A43 solid 2px; border-radius: 10px; width:260px;">Promoções especiais:</h2>
+    <h2 style="margin-top: 60px; align-items:center; text-align:center; color:white; border:#0C2A43 solid 2px; border-radius: 10px; width:400px; height:60px; background-color:#0C2A43">Promoções especiais:</h2>
 
- <h2 style="margin-top: 60px; align-items:center; text-align:center; color:white; border:#0C2A43 solid 2px; border-radius: 10px; width:400px; height:60px; background-color:#0C2A43">Promoções especiais:</h2> 
-
-</div>
+  </div>
 </main>
 
 

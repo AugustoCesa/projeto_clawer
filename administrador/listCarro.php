@@ -1,7 +1,7 @@
 <?php
 
 
-include "include/MySql.php";
+include "../include/MySql.php";
 
 $sql = $pdo->prepare('SELECT * FROM carros');
 if ($sql->execute()) {
