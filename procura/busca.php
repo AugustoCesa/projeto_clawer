@@ -11,7 +11,7 @@ include "../componentes/nav.php"
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>busca</title>
-    <link href="assets/css/estilo.css" rel="stylesheet">
+    <link href="../assets/css/estilo.css" rel="stylesheet">
 </head>
 
 <body>
