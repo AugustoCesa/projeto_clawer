@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-<?php include 'header.php' ?>
-
-<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #0C2A43;" >
-  <div class="container-fluid">
-
-    <a class="navbar-brand" href="#">
-<img src="assets/images/logo.jpg" width="150" alt="" id="logo">
-=======
 <?php 
 include 'header.php';
 ?>
@@ -17,7 +8,6 @@ include 'header.php';
 
     <a class="navbar-brand" href="index.php">
 <img src="../assets/images/logo.jpg" width="150" alt="" id="logo">
->>>>>>> cf9a78d5f25daa448ea7f14ace4cdbb64568dd18
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,15 +38,9 @@ include 'header.php';
         </li>
         
       </ul>
-<<<<<<< HEAD
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit" style="color:white; border-color:white" >GO</button>
-=======
       <form class="d-flex" role="search" action="busca.php" method="GET">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="busca">
         <button class="btn btn-outline-success" type="submit" style="color:white; border-color:white">GO</button>
->>>>>>> cf9a78d5f25daa448ea7f14ace4cdbb64568dd18
       </form>
     </div>
   </div>
