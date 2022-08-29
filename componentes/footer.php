@@ -1,5 +1,11 @@
 <footer>
+<<<<<<< HEAD
     <div class="corfoot">
+=======
+
+    <div class="corfoot" style="color: white;
+    background-image: linear-gradient(#0C2A43, black);">
+>>>>>>> cf9a78d5f25daa448ea7f14ace4cdbb64568dd18
         <div class="contact-area" style="text-align: center; color:white;">
 
             <div class="container">
@@ -44,7 +50,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+<<<<<<< HEAD
                         <p>Desenvolvido por <a href="#">Augusto</a>&copy; 2022</p>
+=======
+                        <p>Desenvolvido por <a href="#">Clawer Automóveis</a>&copy; 2022</p>
+>>>>>>> cf9a78d5f25daa448ea7f14ace4cdbb64568dd18
                     </div>
                 </div>
             </div>

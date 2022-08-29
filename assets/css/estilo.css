@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+>>>>>>> cf9a78d5f25daa448ea7f14ace4cdbb64568dd18
 html {
     font-family: 'Bebas Neue';
 
@@ -7,13 +14,29 @@ html {
 #logo{
     border-radius: 20px;
 }
+<<<<<<< HEAD
 
+=======
+nav{
+    z-index: 1;
+}
+>>>>>>> cf9a78d5f25daa448ea7f14ace4cdbb64568dd18
 
 /*footer*/
 
 
 .corfoot{
     color: white;
+<<<<<<< HEAD
     background-image: linear-gradient(#0C2A43, rgb(0, 0, 0));
 }
 
+=======
+    background-image: linear-gradient(#0C2A43, black);
+   
+}
+
+.model{
+    font-size: 18px;
+}
+>>>>>>> cf9a78d5f25daa448ea7f14ace4cdbb64568dd18
