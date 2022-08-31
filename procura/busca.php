@@ -1,6 +1,7 @@
 <?php
 include "../include/conBusca.php";
 include "../componentes/nav.php"
+
 ?>
 
 <!DOCTYPE html>

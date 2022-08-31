@@ -1,4 +1,4 @@
-<?php include 'mensagem.php'?>
+<?php include "mensagem.php"?>
 <footer>
 
     <div class="corfoot" style="color: white;
@@ -30,10 +30,10 @@
                         <p>Ou nos deixe uma mensagem:</p>
                     </div>
                     <div class="col-md-6" id="contact-form">
-                        <form action=""></form>
-                        <input type="text" class="form-control" placeholder="Seu nome" name="nome">
-                        <input type="email" class="form-control" placeholder="E-mail" name="email">
-                        <textarea class="form-control" rows="3" placeholder="Sua mensagem..." name="mensagem"></textarea>
+                        <form action="mensagem.php"></form>
+                        <input type="text" class="form-control" placeholder="Seu nome" name="nome" value="<?php echo $nome ?>">
+                        <input type="email" class="form-control" placeholder="E-mail" name="email"value="<?php echo $email ?>"> 
+                        <textarea class="form-control" rows="3" placeholder="Sua mensagem..." name="mensagem"value="<?php echo $mensagem ?>"> </textarea>
                         <input type="submit" class="main-btn" value="Enviar" style="background-color:#0C2A43; color:white; border-bottom: solid white 2px; width:110px; height: 55px; border-radius:20px; font-size:20px ">
                     </div>
                 </div>

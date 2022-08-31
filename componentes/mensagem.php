@@ -1,30 +1,62 @@
+<?php include "../include/MySql.php" ?>
+
 <?php
 
-if (isset($_POST ['email']) && !empty($_POST['email'])){
+$nome ="";
+$nomeErro="";
 
-$nome = addslashes($_POST['nome']);
-$email = addslashes($_POST['email']);
-$mensagem = addslashes($_POST['mensagem']);
+$email="";
+$emailErro="";
 
-
-$para = "autoclawer@gmail.com";
-$assunto= "Contato - Clawer";
-
-$body= "Nome: ".$nome. "/r/n";
-       "E-mail: ".$email."/r/n";
-       "Mensagem: ".$mensagem;
-
-$header = "From: autoclawer@gmail.com"."/r/n".
-"Reply-To".$email . "/r/n"
-."X=Mailer: PHP/". phpversion();
-
-if (mail($para,$assunto,$body,$header)){
-echo("E-mail enviado com sucesso");
-
-}else("O email não foi enviado");
+$mensagem="";
+$mensagemErro="";
 
 
 
+if (empty($_POST['nome']))
+       $marcaErro = "Nome é obrigatório!";
+else
+       $marca = $_POST['nome'];
 
-}
+if (empty($_POST['email']))
+       $nomeErro = "E-mail é obrigatório!";
+else
+       $nome = $_POST['email'];
+
+if (empty($_POST['mensagem']))
+       $modeloErro = "Mensagem é obrigatório!";
+else
+       $modelo = $_POST['mensagem'];
+
+
+        
+       if ($nome && $email && $mensagem) {
+              
+              $sql = $pdo->prepare("SELECT * FROM mensagem WHERE mensagem = ?");
+              if ($sql->execute(array($modelo))) {
+                  if ($sql->rowCount() <= 0) {
+                      $sql = $pdo->prepare("INSERT INTO mensagem (nome, email, mensagem)
+                                              VALUES (?, ?, ?)");
+                      if ($sql->execute(array($nome,$email,$mensagem))) {
+                          $msgErro = "Dados cadastrados com sucesso!";
+                          $nome = "";
+                          $email="";
+                          $mensagem="";
+
+                          header('location:index.php');
+                      } else {
+                          $msgErro = "Dados não cadastrados!";
+                      }
+                  } else {
+                      $msgErro = "mensagem de usuário já cadastrado!!";
+                  }
+              } else {
+                  $msgErro = "Erro no comando SELECT!";
+              }
+          } else {
+              $msgErro = "Dados não cadastrados!";
+          }
+
+
+
 ?>

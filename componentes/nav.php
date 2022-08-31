@@ -38,7 +38,7 @@ include 'header.php';
         </li>
         
       </ul>
-      <form class="d-flex" role="search" action="procura/busca.php" method="GET">
+      <form class="d-flex" role="search" action="procura/index.php" method="GET">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="busca">
         <button class="btn btn-outline-success" type="submit" style="color:white; border-color:white">GO</button>
       </form>
