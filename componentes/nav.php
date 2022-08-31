@@ -7,7 +7,7 @@ include 'header.php';
   <div class="container-fluid">
 
     <a class="navbar-brand" href="index.php">
-<img src="../assets/images/logo.jpg" width="150" alt="" id="logo">
+<img src="logo.jpg" width="150" alt="logo">
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,12 +36,15 @@ include 'header.php';
             <li><a class="dropdown-item" href="#">lojas</a></li>
           </ul>
         </li>
+       
         
       </ul>
-      <form class="d-flex" role="search" action="procura/index.php" method="GET">
+      <form class="d-flex" role="search" action="busca.php" method="GET">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="busca">
         <button class="btn btn-outline-success" type="submit" style="color:white; border-color:white">GO</button>
       </form>
+
+     
     </div>
   </div>
 </nav>

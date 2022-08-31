@@ -1,23 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-body { overflow-x: hidden; }
+body { overflow-x: hidden; margin:0 auto; border: 0 ; }
 
 html {
     font-family: 'Bebas Neue';
 
 }
 
-
-#logo{
-    border-radius: 20px;
-}
 nav{
     z-index: 1;
 }
 
 /*footer*/
-
 
 .corfoot{
     color: white;
