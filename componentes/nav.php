@@ -7,7 +7,7 @@ include 'header.php';
   <div class="container-fluid">
 
     <a class="navbar-brand" href="index.php">
-<img src="logo.jpg" width="150" alt="logo">
+<img src="assets/images/logo.jpg" width="150" alt="logo">
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
