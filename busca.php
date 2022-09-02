@@ -62,9 +62,9 @@ OR preco LIKE '%$pesquisa%'";
                             foreach ($sql_query as $dados){ 
                                 /*Card display code goes here*/
                     ?>
-                            <div class="container resultado" style=" border:solid white 10px;display: flex; flex-direction: column; margin-top: 100px; font-size:22px; background-color:white; width: 280px; height: 190px; border-radius: 8px;">
+                            <div class="container resultado" style=" border:solid white 10px;display: flex; flex-direction: column; margin-top: 100px; font-size:22px; background-color:white; width: 280px; height: 400px; border-radius: 8px;">
                             
-                            <img style="width:150px;" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($dados['imagem'])?>">
+                            <img style="width:240px; border-radius:11px" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($dados['imagem'])?>">
                             <p><strong> Marca: <?php echo $dados['marca']; ?></Strong></p>
                                 <div class="model" style="display: flex;">
                                 <small> <p><?php echo $dados['nome']; ?>/</p></small>
