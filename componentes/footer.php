@@ -38,7 +38,8 @@
                         <span class="obrigatorio">*<?php echo $emailErro ?></span>
                         <br>
                         <textarea class="form-control" rows="3" placeholder="Sua mensagem..." name="mensagem" value="<?php echo $mensagem ?>"> </textarea>
-                        <input type="submit" class="main-btn" value="Enviar" style="background-color:#0C2A43; color:white; border-bottom: solid white 2px; width:110px; height: 55px; border-radius:20px; font-size:20px ">
+                        <input type="submit" class="main-btn" value="Enviar" style="background-color:#0C2A43; color:white; border-bottom: solid white 2px;
+                         width:110px; height: 55px; border-radius:20px; font-size:20px ">
                         <span class="obrigatorio">*<?php echo $mensagemErro ?></span>
                     </div>
                 </div>

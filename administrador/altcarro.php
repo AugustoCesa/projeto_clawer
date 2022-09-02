@@ -108,21 +108,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     else
         $modelo = $_POST['modelo'];
 
-    if (!empty($_FILES["image"]["name"])) {
+    if (!empty($_FILES["imagem"]["name"])) {
         //Pegar informações do arquivo
-        $fileName = basename($_FILES['image']['name']);
+        $fileName = basename($_FILES['imagem']['name']);
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
         //Array de extensoes permitidas
         $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
         if (in_array($fileType, $allowTypes)) {
-            $image = $_FILES['image']['tmp_name'];
+            $image = $_FILES['imagem']['tmp_name'];
             $imgContent = file_get_contents($image);
         } else {
             $msgErro = "Somente arquivos JPG, JPEG, PNG e GIFF são permitidos";
         }
     }
 
-    if ($marca && $nome && $preco && $modelo) {
+    if ($marca && $nome && $preco) {
         //Verificar se ja existe o email
         $sql = $pdo->prepare("SELECT * FROM CARROS WHERE modelo = ? AND CodCarro <> ?");
         if ($sql->execute(array($modelo, $codigo))) {
@@ -143,10 +143,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                                                        WHERE CodCarro=?");
 
                 if ($sql->execute(array(
-                    $codigo, $marca, $nome, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $modelo, $imgContent
+                    $codigo, $marca, $nome, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $modelo, $imgContent, $codigo
                 ))) {
                     $msgErro = "Dados alterados com sucesso!";
-                    header('location:listUsuario.php');
+                    header('location:listCarro.php');
                 } else {
                     $msgErro = "Dados não cadastrados!";
                 }
@@ -169,13 +169,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Usuário</title>
-    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 
 <body>
     <form method="POST" enctype="multipart/form-data">
         <fieldset>
-            <legend>Cadastro de Usuário</legend>
+            <legend>Alteração de carro</legend>
 
             marca: <input type="text" name="marca" value="<?php echo $marca ?>">
             <span class="obrigatorio">*<?php echo $marcaErro ?></span>

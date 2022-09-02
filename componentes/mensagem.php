@@ -4,14 +4,13 @@
 
 $nome = "";
 $email = "";
-$mensagem = "";
-$mensagemUser="";
+$mensageUser="";
 
 $nomeErro = "";
 $emailErro = "";
-$mensagemErro = "";
+$mensageErro = "";
 
-
+$codigo="";
 
 
 if (empty($_POST['nome']))
@@ -24,37 +23,37 @@ if (empty($_POST['email']))
 else
     $email = $_POST['email'];
 
-if (empty($_POST['mensagem']))
-    $mensagemErro = "Mensagem é obrigatório!";
+if (empty($_POST['mensage']))
+    $mensageErro = "Mensagem é obrigatório!";
 else
-    $mensagem = $_POST['mensagem'];
+    $mensageUser = $_POST['mensage'];
 
 
-if ($nome && $email && $mensagem) {
+if ($nome && $mensageUser) {
     //Verificar se a mensagem já existe
-    $sql = $pdo->prepare("SELECT * FROM mensagem WHERE mensagemUser = ?");
-    if ($sql->execute(array($mensagemUser))) {
+    $sql = $pdo->prepare("SELECT * FROM MENSAGEM WHERE mensageUser = ?");
+    if ($sql->execute(array($mensageUser))) {
         if ($sql->rowCount() <= 0) {
-            $sql = $pdo->prepare("INSERT INTO carros (codigo, nome, email, mensagemUser, CodUsuario)
-                                                VALUES (null, ?, ?, ?, NULL)");
-            if ($sql->execute(array($nome, $email, $mensagem))) {
+            $sql = $pdo->prepare(" INSERT INTO MENSAGE(codigo, nome, email, mensageUser,)
+                                                VALUES (NULL, ?, ?, ?)");
+            if ($sql->execute(array( $nome, $email, $mensageUser))) {
                 $msgErro = "Dados cadastrados com sucesso!";
                 $nome = "";
                 $email = "";
-                $mensagem = "";
+                $mensageUser = "";
 
-                header('location:login.php');
+                header('location:../index.php');
             } else {
                 $msgErro = "Dados não cadastrados!";
             }
         } else {
-            $msgErro = "Email de usuário já cadastrado!!";
+            $msgErro = "mensagem de usuário já enviada!";
         }
     } else {
         $msgErro = "Erro no comando SELECT!";
     }
 } else {
-    $msgErro = "Dados não cadastrados!";
+    $msgErro = "Dados não enviados!";
 }
 
 
@@ -77,15 +76,16 @@ if ($nome && $email && $mensagem) {
                 <legend>Cadastro de Carro</legend>
 
                 nome: <input type="text" name="nome" value="<?php echo $nome ?>">
-                <span class="obrigatorio">*<?php echo $nomeErro ?></span>
+                <span class="obrigatorio"style="font-size: x-small" >*<?php echo $nomeErro ?></span>
                 <br>
-                email: <input type="text" name="email" value="<?php echo $email ?>">
-                <span class="obrigatorio">*<?php echo $emailErro ?></span>
+                email: <input type="email" name="email" value="<?php echo $email ?>">
+                <span class="obrigatorio" style="font-size: x-small">*<?php echo $emailErro ?></span>
                 <br>
-                Mensagem: <input type="text" name="mensagem" value="<?php echo $mensagem ?>">
-                <span class="obrigatorio">*<?php echo $mensagemErro ?></span>
+                Mensagem: <input type="text" name="mensage" value="<?php echo $mensageUser ?>">
+                <span class="obrigatorio" style="font-size: x-small;">*<?php echo $mensageErro ?></span>
                 <br>
 
+                
                 <input type="submit" value="Salvar" name="submit">
             </fieldset>
         </form>
