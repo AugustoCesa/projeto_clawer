@@ -5,33 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interface de administrador</title>
 </head>
 
-<body style="background-color: white;">
+<body style="background-image: linear-gradient(#2046b0,#101c66); margin:0 auto; width:100%;">
 
 
 
 
-    <h1 style="color: black; text-align:left; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Interface de administrador</h1>
+    <h1 style="color: white; text-align:left; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; width:100%">Interface de administrador</h1>
     <hr>
-    <div style="display: flex; justify-content:left; margin-top: 100px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ">
-        <div style="display: flex; flex-direction:column">
-            <div style="border: solid black 2px; border-radius:8px; margin-top: 40px; text-align:center;height:300px; width: 400px">
-                <h3 style="color: black;">Cadastrar Carro</h3>
-                <button type="button" style="width: 80px; height:30px; background-color:gray;"><a href="CadCarros.php" style="text-decoration:none; color: white; font-size:18px">entrar</a></button>
-                <h3 style="color: black;">Mudar informações dos carros</h3>
-                <button type="button" href="listCarro.php" style="width: 80px;height:30px; background-color:gray; "><a href="AltCarro.php" style="text-decoration:none; background-color:gray; color:white; font-size:18px">entrar</a></button>
-                <h3 style="color: black;">Lista de carros</h3>
-                <button type="button" href="Altcarro.php" style="width: 80px;height:30px; background-color:gray; "><a href="listCarro.php" style="text-decoration:none; background-color:gray; color:white; font-size:18px">entar</button>
+    <div style="display: flex; justify-content:center; margin-top: 100px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; width:100% ">
+        <div style="display: flex; flex-direction:column; color:white">
+            <div style="border: solid black 2px; border-radius:8px; margin-top: 40px; text-align:center;height:350px; width: 400px; width:100%">
+               <h2>Carros</h2>
+            <h3 style="color: white;">Cadastrar Carro</h3>
+            <a href="cadCarros.php"><button type="button"  style="width: 80px;height:30px; background-color:gray; color:white; font-size:20px">entrar</button></a>
+                <h3 style="color: white;">Mudar informações dos carros</h3>
+                <a href="inter_altCarro.php"><button type="button"  style="width: 80px;height:30px; background-color:gray; color:white; font-size:20px">entrar</button></a>
+                <h3 style="color: white;">Lista de carros</h3>
+                <a href="listCarro.php"><button type="button"  style="width: 80px;height:30px; background-color:gray; color:white; font-size:20px">entrar</button></a>
             </div>
-            <div style="border: solid black 2px; border-radius:8px; margin-top: 40px; text-align:center; height:190px">
-                <h2 style="color: black;">Usuário</h2>
-                <h3 style="color: black;">Alterar usuários</h3>
-                <button type="button" href="AltUsuario.php" style="width: 80px;height:30px; background-color:gray; "><a href="AltUsuarios.php" style="text-decoration:none; color: white; font-size:18px">entrar</a></button>
+            <div style="border: solid black 2px; border-radius:8px; margin-top: 40px; text-align:center; height:190px; width:100%">
+                <h2 style="color: white;">Usuário</h2>
+                <h3 style="color:white;">Alterar usuários</h3>
+                <a href="listUsuario.php"><button type="button"  style="width: 80px;height:30px; background-color:gray; color:white; font-size:20px">entrar</button></a>
             </div>
 
-            <h3><a href="../index.php" style="text-decoration: none; font-size:30px; border: solid black 2px; border-radius:4px">voltar para o inicio</a></h3>
+            <h3><a href="../index.php" style="text-decoration: none; font-size:30px; border: solid white 2px; border-radius:4px; color:white">voltar para o inicio</a></h3>
 
         </div>
     </div>

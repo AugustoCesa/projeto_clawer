@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                 $sql = $pdo->prepare("SELECT * FROM carros WHERE modelo = ?");
                 if ($sql->execute(array($modelo))) {
                     if ($sql->rowCount() <= 0) {
-                        $sql = $pdo->prepare("INSERT INTO carros (codCarro, marca, nome, modelo, preco, ano, cambio, portas, combustível, kilometragem, placa, cor, imagem)
+                        $sql = $pdo->prepare("INSERT INTO carros (codCarro, marca, nome, modelo, preco, ano, cambio, portas, combustivel, kilometragem, placa, cor, imagem)
                                                 VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                         if ($sql->execute(array($marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent))) {
                             $msgErro = "Dados cadastrados com sucesso!";
@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                             $placa = "";
                             $cor = "";
 
-                            header('location:login.php');
+                            header('location:listCarro.php');
                         } else {
                             $msgErro = "Dados não cadastrados!";
                         }

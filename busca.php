@@ -47,9 +47,9 @@ OR preco LIKE '%$pesquisa%'";
             ?>
 
 
-                <tr>
-                    <td colspan="4">Nenhum resultado encontrado</td>
-                </tr>
+               
+                   <p colspan="4" style="color: white; font-size:40px">Nenhum resultado encontrado </p>
+               
 
                 <?php
             } else {
