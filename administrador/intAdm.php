@@ -22,7 +22,7 @@
             <h3 style="color: white;">Cadastrar Carro</h3>
             <a href="cadCarros.php"><button type="button"  style="width: 80px;height:30px; background-color:gray; color:white; font-size:20px">entrar</button></a>
                 <h3 style="color: white;">Mudar informações dos carros</h3>
-                <a href="inter_altCarro.php"><button type="button"  style="width: 80px;height:30px; background-color:gray; color:white; font-size:20px">entrar</button></a>
+                <a href="int_altCarro.php"><button type="button"  style="width: 80px;height:30px; background-color:gray; color:white; font-size:20px">entrar</button></a>
                 <h3 style="color: white;">Lista de carros</h3>
                 <a href="listCarro.php"><button type="button"  style="width: 80px;height:30px; background-color:gray; color:white; font-size:20px">entrar</button></a>
             </div>

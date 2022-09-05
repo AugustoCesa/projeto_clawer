@@ -59,42 +59,52 @@ $corErro = "";
      $marcaErro = "Marca é obrigatório!";
  else
      $marca = $_POST['marca'];
+     
  if (empty($_POST['nome']))
      $nomeErro = "Nome é obrigatório!";
  else
      $nome = $_POST['nome'];
+
  if (empty($_POST['modelo']))
      $modeloErro = "Modelo é obrigatório!";
  else
      $modelo = $_POST['modelo'];
+
  if (empty($_POST['preco']))
      $precoErro = "preço é obrigatório!";
  else
      $preco = $_POST['preco'];
+
  if (empty($_POST['ano']))
      $anoErro = "ano é obrigatório!";
  else
      $ano = $_POST['ano'];
+
  if (empty($_POST['cambio']))
      $precoErro = "Cambio é obrigatório!";
  else
      $cambio = $_POST['cambio'];
+
  if (empty($_POST['portas']))
      $portasErro = "Portas é obrigatório!";
  else
      $portas = $_POST['portas'];
+
  if (empty($_POST['combustivel']))
-     $combustivelErro = "preço é obrigatório!";
+     $combustivelErro = "combustivel é obrigatório!";
  else
      $combustivel = $_POST['combustivel'];
+
  if (empty($_POST['kilometragem']))
      $kilometragemErro = "kilometragem é obrigatório!";
  else
      $kilometragem = $_POST['kilometragem'];
+
  if (empty($_POST['placa']))
      $placaErro = "placa é obrigatório!";
  else
      $placa = $_POST['placa'];
+
  if (empty($_POST['cor']))
      $corErro = "cor é obrigatório!";
  else
@@ -130,13 +140,13 @@ $corErro = "";
                                                              cambio=?,
                                                              portas=?,
                                                              combustivel=?,
-                                                             kilomeragem=?,
+                                                             kilometragem=?,
                                                              placa=?,
                                                              cor=?,
                                                              imagem=?,
                                                        WHERE codCarro=?");
 
-                    if ($sql->execute(array($codigo,$marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent))){
+                    if ($sql->execute(array($codigo, $marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent, $codigo))){
                         $msgErro = "Dados alterados com sucesso!";
                         header('location:listCarro.php');
                     } else {
@@ -198,7 +208,7 @@ $corErro = "";
         <br>
         Cor: <input type="text" name="cor" value="<?php echo $cor ?>">
         <span class="obrigatorio">*<?php echo $corErro ?></span>
-        <input type="file" name="image">
+        <input type="file" name="imagem">
         <br>
         <input type="submit" value="Salvar" name="submit">
     </fieldset>
