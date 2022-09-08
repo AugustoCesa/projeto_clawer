@@ -21,6 +21,7 @@ if ($sql->execute()) {
     echo "  <th>placa</th>";
     echo "  <th>cor</th>";
     echo "  <th>preco</th>";
+    echo " <th> categoria<th>";
     echo "  <th>imagem</th>";
 
 
@@ -39,7 +40,7 @@ if ($sql->execute()) {
         echo "<td>" . $value['placa'] . "</td>";
         echo "<td>" . $value['cor'] . "</td>";
         echo "<td>" . $value['preco'] . "</td>";
-
+        echo "<td>" . $value['categoria'] . "</td>";
         $imagem = $value['imagem'];
         echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem) . '"></td>';
 

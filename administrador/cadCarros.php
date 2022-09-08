@@ -12,6 +12,7 @@ $combustivel = "";
 $kilometragem = "";
 $placa = "";
 $cor = "";
+$categoria = "";
 
 $marcaErro = "";
 $nomeErro = "";
@@ -24,7 +25,7 @@ $combustivelErro = "";
 $kilometragemErro = "";
 $placaErro = "";
 $corErro = "";
-
+$categoriaErro = "";
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     if (!empty($_FILES["image"]["name"])) {
         //Pegar informações do arquivo
@@ -92,15 +93,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
             else
                 $cor = $_POST['cor'];
 
+            if (empty($_POST['categoria']))
+                $categoriaErro = "categoria é obrigatório";
+            else
+                $categoria = $_POST['categoria'];
+
 
             if ($kilometragem && $nome && $placa && $cor) {
                 //Verificar se ja existe o carro
                 $sql = $pdo->prepare("SELECT * FROM carros WHERE modelo = ?");
                 if ($sql->execute(array($modelo))) {
                     if ($sql->rowCount() <= 0) {
-                        $sql = $pdo->prepare("INSERT INTO carros (codCarro, marca, nome, modelo, preco, ano, cambio, portas, combustivel, kilometragem, placa, cor, imagem)
-                                                VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                        if ($sql->execute(array($marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent))) {
+                        $sql = $pdo->prepare("INSERT INTO carros (codCarro, marca, nome, modelo, preco, ano, cambio, portas, combustivel, kilometragem, placa, cor, imagem, categoria)
+                                                VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+                        if ($sql->execute(array($marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent, $categoria))) {
                             $msgErro = "Dados cadastrados com sucesso!";
                             $nome = "";
                             $modelo = "";
@@ -112,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                             $kilometragem = "";
                             $placa = "";
                             $cor = "";
-
+                            $categoria = "";
                             header('location:listCarro.php');
                         } else {
                             $msgErro = "Dados não cadastrados!";
@@ -147,51 +153,54 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
 <body>
 
-<div style="display:flex; justify-content:center">
-    <form method="POST" enctype="multipart/form-data">
-        <fieldset style="display: flex; flex-direction: column;">
-            <legend>Cadastro de Carro</legend>
+    <div style="display:flex; justify-content:center">
+        <form method="POST" enctype="multipart/form-data">
+            <fieldset style="display: flex; flex-direction: column;">
+                <legend>Cadastro de Carro</legend>
 
-            Marca: <input type="text" name="marca" value="<?php echo $marca ?>">
-            <span class="obrigatorio">*<?php echo $marcaErro ?></span>
-            <br>
-            Nome: <input type="text" name="nome" value="<?php echo $nome ?>">
-            <span class="obrigatorio">*<?php echo $nomeErro ?></span>
-            <br>
-            Modelo: <input type="text" name="modelo" value="<?php echo $modelo ?>">
-            <span class="obrigatorio">*<?php echo $modeloErro ?></span>
-            <br>
-            Preço: <input type="text" name="preco" value="<?php echo $preco ?>">
-            <span class="obrigatorio">*<?php echo $precoErro ?></span>
-            <br>
-            Ano: <input type="text" name="ano" value="<?php echo $ano ?>">
-            <span class="obrigatorio">*<?php echo $anoErro ?></span>
-            <br>
-            Cambio: <input type="text" name="cambio" value="<?php echo $cambio ?>">
-            <span class="obrigatorio">*<?php echo $cambioErro ?></span>
-            <br>
-            Portas: <input type="text" name="portas" value="<?php echo $portas ?>">
-            <span class="obrigatorio">*<?php echo $portasErro ?></span>
-            <br>
-            Combustivel: <input type="text" name="combustivel" value="<?php echo $combustivel ?>">
-            <span class="obrigatorio">*<?php echo $combustivelErro ?></span>
-            <br>
-            kilometragem: <input type="text" name="kilometragem" value="<?php echo $kilometragem ?>">
-            <span class="obrigatorio">*<?php echo $kilometragemErro ?></span>
-            <br>
-            Placa: <input type="text" name="placa" value="<?php echo $placa ?>">
-            <span class="obrigatorio">*<?php echo $placaErro ?></span>
-            <br>
-            Cor: <input type="text" name="cor" value="<?php echo $cor ?>">
-            <span class="obrigatorio">*<?php echo $corErro ?></span>
+                Marca: <input type="text" name="marca" value="<?php echo $marca ?>">
+                <span class="obrigatorio">*<?php echo $marcaErro ?></span>
+                <br>
+                Nome: <input type="text" name="nome" value="<?php echo $nome ?>">
+                <span class="obrigatorio">*<?php echo $nomeErro ?></span>
+                <br>
+                Modelo: <input type="text" name="modelo" value="<?php echo $modelo ?>">
+                <span class="obrigatorio">*<?php echo $modeloErro ?></span>
+                <br>
+                Preço: <input type="text" name="preco" value="<?php echo $preco ?>">
+                <span class="obrigatorio">*<?php echo $precoErro ?></span>
+                <br>
+                Ano: <input type="text" name="ano" value="<?php echo $ano ?>">
+                <span class="obrigatorio">*<?php echo $anoErro ?></span>
+                <br>
+                Cambio: <input type="text" name="cambio" value="<?php echo $cambio ?>">
+                <span class="obrigatorio">*<?php echo $cambioErro ?></span>
+                <br>
+                Portas: <input type="text" name="portas" value="<?php echo $portas ?>">
+                <span class="obrigatorio">*<?php echo $portasErro ?></span>
+                <br>
+                Combustivel: <input type="text" name="combustivel" value="<?php echo $combustivel ?>">
+                <span class="obrigatorio">*<?php echo $combustivelErro ?></span>
+                <br>
+                kilometragem: <input type="text" name="kilometragem" value="<?php echo $kilometragem ?>">
+                <span class="obrigatorio">*<?php echo $kilometragemErro ?></span>
+                <br>
+                Placa: <input type="text" name="placa" value="<?php echo $placa ?>">
+                <span class="obrigatorio">*<?php echo $placaErro ?></span>
+                <br>
+                Cor: <input type="text" name="cor" value="<?php echo $cor ?>">
+                <span class="obrigatorio">*<?php echo $corErro ?></span>
 
-            <input type="file" name="image">
-            <br>
-            <input type="submit" value="Salvar" name="submit">
-        </fieldset>
-    </form>
-</div>
-    
+                Categoria: <input type="text" name="categoria" value="<?php echo $categoria ?>">
+                <span class="obrigatorio">*<?php echo $categoriaErro ?></span>
+
+                <input type="file" name="image">
+                <br>
+                <input type="submit" value="Salvar" name="submit">
+            </fieldset>
+        </form>
+    </div>
+
 </body>
 
 
