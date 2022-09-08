@@ -39,7 +39,8 @@ include "componentes/nav.php"
 WHERE marca LIKE '%$pesquisa%' 
 OR modelo LIKE '%$pesquisa%' 
 OR nome LIKE '%$pesquisa%' 
-OR preco LIKE '%$pesquisa%'";
+OR preco LIKE '%$pesquisa%'
+OR categoria LIKE '%$categoria%'";
 
             $sql_query = $mysqli->query($sql_code) or die("Erro ao consultar" . $mysqli->error);
 
@@ -69,6 +70,7 @@ OR preco LIKE '%$pesquisa%'";
                                 <div class="model" style="display: flex;">
                                 <small> <p><?php echo $dados['nome']; ?>/</p></small>
                                 <small><p><?php echo $dados['modelo']; ?></p></small>
+                                <small><p><?php echo $dados['categoria']?></p></small>
                                 </div>
                                 <p style="font-size: 29px;"><strong><?php echo $dados['preco']; ?></strong></p>
                             </div>                    
