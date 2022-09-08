@@ -173,8 +173,9 @@ $corErro = "";
     <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
-<form method="POST" enctype="multipart/form-data">
-    <fieldset style="display: flex; flex-direction: column;">
+    <div style="display: flex; justify-content:center">
+<form method="POST" enctype="multipart/form-data" >
+    <fieldset style="display: flex; flex-direction: column; width:200px;">
         <legend>Cadastro de Carro</legend>
         Marca: <input type="text" name="marca" value="<?php echo $marca ?>">
         <span class="obrigatorio">*<?php echo $marcaErro ?></span>
@@ -213,5 +214,6 @@ $corErro = "";
         <input type="submit" value="Salvar" name="submit">
     </fieldset>
 </form>
+</div>
 </body>
 </html>
