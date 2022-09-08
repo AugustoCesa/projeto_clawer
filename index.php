@@ -28,7 +28,7 @@ include 'componentes/nav.php'
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Ou quer alugar um carro?</h5>
           <p style="color: white;">Pra sua sorte, nós tambem alugamos</p>
-          <button class="btn main-btn" style="background-color:#0C2A43; color:white;">Saiba mais</button>
+          <a href="alugar.php"><button class="btn main-btn" style="background-color:#0C2A43; color:white;">Saiba mais</button></a>
         </div>
       </div>
       <div class="carousel-item">

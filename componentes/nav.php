@@ -29,7 +29,7 @@ include 'header.php';
             Serviços
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Alugar carro</a></li>
+            <li><a class="dropdown-item" href="alugar.php">Alugar carro</a></li>
             <li><a class="dropdown-item" href="#">Agendar test-drive</a></li>
             <li><a class="dropdown-item" href="#">Comprar</a></li>
             <li><hr class="dropdown-divider"></li>
