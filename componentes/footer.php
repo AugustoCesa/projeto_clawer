@@ -1,4 +1,72 @@
 
+<?php include "include/MySql.php" ?>
+
+<?php
+
+$nome = "";
+$email = "";
+$mensagemUser="";
+
+$nomeErro = "";
+$emailErro = "";
+$mensagemErro = "";
+
+$codigo="";
+
+
+if (empty($_POST['nome']))
+    $nomeErro = "Nome é obrigatório!";
+else
+    $nome = $_POST['nome'];
+
+if (empty($_POST['email']))
+    $emailErro = "email é obrigatório!";
+else
+    $email = $_POST['email'];
+
+if (empty($_POST['mensagem']))
+    $mensagemErro = "Mensagem é obrigatório!";
+else
+    $mensagemUser = $_POST['mensagem'];
+
+
+if ($nome && $mensagemUser) {
+    //Verificar se a mensagem já existe
+    $sql = $pdo->prepare("SELECT * FROM MENSAGEM WHERE mensagemUser = ?");
+    if ($sql->execute(array($mensagemUser))) {
+        if ($sql->rowCount() <= 0) {
+            $sql = $pdo->prepare(" INSERT INTO MENSAGE(codigo, nome, email, mensagemUser,)
+                                                VALUES (NULL, ?, ?, ?)");
+            if ($sql->execute(array( $nome, $email, $mensagemUser))) {
+                $msgErro = "enviado com sucesso!";
+                $nome = "";
+                $email = "";
+                $mensagemUser = "";
+
+                header('location:../index.php');
+            } else {
+                $msgErro = "Dados não cadastrados!";
+            }
+        } else {
+            $msgErro = "mensagem de usuário já enviada!";
+        }
+    } else {
+        $msgErro = "Erro no comando SELECT!";
+    }
+} else {
+    $msgErro = "Dados não enviados!";
+}
+
+
+?>
+
+
+
+
+
+
+
+
 
 <footer>
 
