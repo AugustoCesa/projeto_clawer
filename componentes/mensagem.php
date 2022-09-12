@@ -1,6 +1,5 @@
-<?php include "../include/MySql.php" ?>
+<?php include "" ;
 
-<?php
 
 $nome = "";
 $email = "";
@@ -34,7 +33,7 @@ if ($nome && $mensageUser) {
     $sql = $pdo->prepare("SELECT * FROM MENSAGEM WHERE mensageUser = ?");
     if ($sql->execute(array($mensageUser))) {
         if ($sql->rowCount() <= 0) {
-            $sql = $pdo->prepare(" INSERT INTO MENSAGE(codigo, nome, email, mensageUser,)
+            $sql = $pdo->prepare(" INSERT INTO MENSAGEM(codigo, nome, email, mensageUser)
                                                 VALUES (NULL, ?, ?, ?)");
             if ($sql->execute(array( $nome, $email, $mensageUser))) {
                 $msgErro = "Dados cadastrados com sucesso!";

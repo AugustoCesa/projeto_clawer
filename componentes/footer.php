@@ -1,4 +1,63 @@
+<?php
 
+include "include/MySql.php";
+
+$nome = "";
+$email = "";
+$mensageUser="";
+
+$nomeErro = "";
+$emailErro = "";
+$mensageErro = "";
+
+$codigo="";
+
+
+if (empty($_POST['nome']))
+    $nomeErro = "Nome é obrigatório!";
+else
+    $nome = $_POST['nome'];
+
+if (empty($_POST['email']))
+    $emailErro = "email é obrigatório!";
+else
+    $email = $_POST['email'];
+
+if (empty($_POST['mensage']))
+    $mensageErro = "Mensagem é obrigatório!";
+else
+    $mensageUser = $_POST['mensage'];
+
+
+if ($nome && $mensageUser) {
+    //Verificar se a mensagem já existe
+    $sql = $pdo->prepare("SELECT * FROM MENSAGEM WHERE mensageUser = ?");
+    if ($sql->execute(array($mensageUser))) {
+        if ($sql->rowCount() <= 0) {
+            $sql = $pdo->prepare(" INSERT INTO MENSAGEM(codigo, nome, email, mensageUser)
+                                                VALUES (NULL, ?, ?, ?)");
+            if ($sql->execute(array( $nome, $email, $mensageUser))) {
+                $msgErro = "Dados cadastrados com sucesso!";
+                $nome = "";
+                $email = "";
+                $mensageUser = "";
+
+                header('location: ""');
+            } else {
+                $msgErro = "Dados não cadastrados!";
+            }
+        } else {
+            $msgErro = "mensagem de usuário já enviada!";
+        }
+    } else {
+        $msgErro = "Erro no comando SELECT!";
+    }
+} else {
+    $msgErro = "Dados não enviados!";
+}
+
+
+?>
 
 <footer>
 
@@ -30,20 +89,34 @@
                     <div class="col-md-6" id="msg-box">
                         <p>Ou nos deixe uma mensagem:</p>
                     </div>
+
+
+
                     <div class="col-md-6" id="contact-form">
-                        <form action=""></form>
-                        <input type="text" class="form-control" placeholder="Seu nome" name="nome" value="<?php echo $nome ?>">
-                        <span class="obrigatorio">*<?php echo $nomeErro ?></span>
-                        <input type="email" class="form-control" placeholder="E-mail" name="email" value="<?php echo $email ?>">
-                        <span class="obrigatorio">*<?php echo $emailErro ?></span>
-                        <br>
-                        <textarea class="form-control" rows="3" placeholder="Sua mensagem..." name="mensagem" value="<?php echo $mensagem ?>"> </textarea>
-                        <input type="submit" class="main-btn" value="Enviar" style="background-color:#0C2A43; color:white; border-bottom: solid white 2px;
-                         width:110px; height: 55px; border-radius:20px; font-size:20px ">
-                        <span class="obrigatorio">*<?php echo $mensagemErro ?></span>
+                    <div style="display:flex; justify-content:center">
+        <form method="POST" enctype="multipart/form-data">
+            <fieldset style="display: flex; flex-direction: column; width:100%">
+            
+                nome: <input type="text" name="nome" style="width: 400px; width:100%" value="<?php echo $nome ?>">
+                <span class="obrigatorio"style="font-size: x-small" >*<?php echo $nomeErro ?></span>
+                
+                email: <input type="email" name="email" value="<?php echo $email ?>">
+                <span class="obrigatorio" style="font-size: x-small">*<?php echo $emailErro ?></span>
+                
+                Mensagem: <input type="text" style= "height:60px " name="mensage" value="<?php echo $mensageUser ?>">
+                <span class="obrigatorio" style="font-size: x-small;">*<?php echo $mensageErro ?></span>
+                
+
+                
+                <input type="submit" value="Salvar" name="submit">
+            </fieldset>
+        </form>
                     </div>
                 </div>
             </div>
+
+
+
 
 
 
