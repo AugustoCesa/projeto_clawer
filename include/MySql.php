@@ -1,6 +1,6 @@
 <?php 
     define('HOST', 'localhost');
-    define('DB', 'projeto');
+    define('DB', 'login');
     define('USER', 'root');
     define('PASS','');
     define('PORT', '3306');
