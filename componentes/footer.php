@@ -1,17 +1,16 @@
-
-<?php include "include/MySql.php" ?>
-
 <?php
+
+include "include/MySql.php";
 
 $nome = "";
 $email = "";
-$mensagemUser="";
+$mensageUser = "";
 
 $nomeErro = "";
 $emailErro = "";
-$mensagemErro = "";
+$mensageErro = "";
 
-$codigo="";
+$codigo = "";
 
 
 if (empty($_POST['nome']))
@@ -24,26 +23,24 @@ if (empty($_POST['email']))
 else
     $email = $_POST['email'];
 
-if (empty($_POST['mensagem']))
-    $mensagemErro = "Mensagem é obrigatório!";
+if (empty($_POST['mensage']))
+    $mensageErro = "Mensagem é obrigatório!";
 else
-    $mensagemUser = $_POST['mensagem'];
+    $mensageUser = $_POST['mensage'];
 
 
-if ($nome && $mensagemUser) {
+if ($nome && $mensageUser) {
     //Verificar se a mensagem já existe
-    $sql = $pdo->prepare("SELECT * FROM MENSAGEM WHERE mensagemUser = ?");
-    if ($sql->execute(array($mensagemUser))) {
+    $sql = $pdo->prepare("SELECT * FROM MENSAGEM WHERE mensageUser = ?");
+    if ($sql->execute(array($mensageUser))) {
         if ($sql->rowCount() <= 0) {
-            $sql = $pdo->prepare(" INSERT INTO MENSAGE(codigo, nome, email, mensagemUser,)
+            $sql = $pdo->prepare(" INSERT INTO MENSAGEM(codigo, nome, email, mensageUser)
                                                 VALUES (NULL, ?, ?, ?)");
-            if ($sql->execute(array( $nome, $email, $mensagemUser))) {
-                $msgErro = "enviado com sucesso!";
+            if ($sql->execute(array($nome, $email, $mensageUser))) {
+                $msgErro = "Dados cadastrados com sucesso!";
                 $nome = "";
                 $email = "";
-                $mensagemUser = "";
-
-                header('location:../index.php');
+                $mensageUser = "";
             } else {
                 $msgErro = "Dados não cadastrados!";
             }
@@ -60,26 +57,18 @@ if ($nome && $mensagemUser) {
 
 ?>
 
-
-
-
-
-
-
-
-
 <footer>
 
     <div class="corfoot" style="color: white;
     background-image: linear-gradient(#0C2A43, black);">
-        <div class="contact-area" style="text-align: center; color:white;">
+        <div class="contact-area" style="color:white;">
 
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <h3 class="main-title">Entre em cotato conosco</h3>
                     </div>
-                    <hr style="width: 130; height:3">
+                    <hr style="width: 160; height:3">
                     <div class="col-md-4 contact-box">
                         <i class="fas fa-phone"></i>
                         <p><span class="contact-title">Ligue para:</span>(47)9999-9999</p>
@@ -98,35 +87,50 @@ if ($nome && $mensagemUser) {
                     <div class="col-md-6" id="msg-box">
                         <p>Ou nos deixe uma mensagem:</p>
                     </div>
-                    <div class="col-md-6" id="contact-form">
-                        <form action=""></form>
-                        <input type="text" class="form-control" placeholder="Seu nome" name="nome" value="<?php echo $nome ?>">
-                        <span class="obrigatorio">*<?php echo $nomeErro ?></span>
-                        <input type="email" class="form-control" placeholder="E-mail" name="email" value="<?php echo $email ?>">
-                        <span class="obrigatorio">*<?php echo $emailErro ?></span>
-                        <br>
-                        <textarea class="form-control" rows="3" placeholder="Sua mensagem..." name="mensagem" value="<?php echo $mensagem ?>"> </textarea>
-                        <input type="submit" class="main-btn" value="Enviar" style="background-color:#0C2A43; color:white; border-bottom: solid white 2px;
-                         width:110px; height: 55px; border-radius:20px; font-size:20px ">
-                        <span class="obrigatorio">*<?php echo $mensagemErro ?></span>
+
+
+
+                    <div style="display:flex; justify-content:space-around; width:100%" id="contact-form">
+                        <div style="display:flex; justify-content:center">
+                            <form method="POST" enctype="multipart/form-data">
+                                <fieldset>
+
+                                    <div style="display: flex; flex-direction:column; width:300px">
+                                        nome: <input type="text" style="width: 100%;" name="nome"value="<?php echo $nome ?>">
+                                        <span class="obrigatorio" style="font-size: x-small">*<?php echo $nomeErro ?></span>
+
+                                        email: <input type="email" name="email" value="<?php echo $email ?>">
+                                        <span class="obrigatorio" style="font-size: x-small">*<?php echo $emailErro ?></span>
+
+                                        Mensagem: <input type="text" style="height:60px " name="mensage" value="<?php echo $mensageUser ?>">
+                                        <span class="obrigatorio" style="font-size: x-small;">*<?php echo $mensageErro ?></span>
+
+                                    </div>
+
+                                    <input type="submit" value="Salvar" name="submit">
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <div id="copy-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Desenvolvido por <a href="#">Clawer Automóveis</a>&copy; 2022</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
-
-        <div id="copy-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p>Desenvolvido por <a href="#">Clawer Automóveis</a>&copy; 2022</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </footer>
 
 
