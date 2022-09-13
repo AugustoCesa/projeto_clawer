@@ -4,13 +4,13 @@ include "include/MySql.php";
 
 $nome = "";
 $email = "";
-$mensageUser = "";
+$mensageUser="";
 
 $nomeErro = "";
 $emailErro = "";
 $mensageErro = "";
 
-$codigo = ""; 
+$codigo="";
 
 
 if (empty($_POST['nome']))
@@ -36,11 +36,13 @@ if ($nome && $mensageUser) {
         if ($sql->rowCount() <= 0) {
             $sql = $pdo->prepare(" INSERT INTO MENSAGEM(codigo, nome, email, mensageUser)
                                                 VALUES (NULL, ?, ?, ?)");
-            if ($sql->execute(array($nome, $email, $mensageUser))) {
+            if ($sql->execute(array( $nome, $email, $mensageUser))) {
                 $msgErro = "Dados cadastrados com sucesso!";
                 $nome = "";
                 $email = "";
                 $mensageUser = "";
+
+                header('location: ""');
             } else {
                 $msgErro = "Dados não cadastrados!";
             }
@@ -61,14 +63,14 @@ if ($nome && $mensageUser) {
 
     <div class="corfoot" style="color: white;
     background-image: linear-gradient(#0C2A43, black);">
-        <div class="contact-area" style="color:white;">
+        <div class="contact-area" style="text-align: center; color:white;">
 
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <h3 class="main-title">Entre em cotato conosco</h3>
                     </div>
-                    <hr style="width: 160; height:3">
+                    <hr style="width: 130; height:3">
                     <div class="col-md-4 contact-box">
                         <i class="fas fa-phone"></i>
                         <p><span class="contact-title">Ligue para:</span>(47)9999-9999</p>
@@ -90,47 +92,46 @@ if ($nome && $mensageUser) {
 
 
 
-                    <div style="display:flex; justify-content:space-around; width:100%" id="contact-form">
-                        <div style="display:flex; justify-content:center">
-                            <form method="POST" enctype="multipart/form-data">
-                                <fieldset>
+                    <div class="col-md-6" id="contact-form">
+                    <div style="display:flex; justify-content:center">
+        <form method="POST" enctype="multipart/form-data">
+            <fieldset style="display: flex; flex-direction: column; width:100%">
+            
+                nome: <input type="text" name="nome" style="width: 400px; width:100%; border-radius:15px" value="<?php echo $nome ?>">
+                <span class="obrigatorio"style="font-size: x-small" >*<?php echo $nomeErro ?></span>
+                
+                email: <input type="email" style="border-radius:15px" name="email" value="<?php echo $email ?>">
+                <span class="obrigatorio" style="font-size: x-small">*<?php echo $emailErro ?></span>
+                
+                Mensagem: <input type="text" style= "height:60px" name="mensage" value="<?php echo $mensageUser ?>">
+                <span class="obrigatorio" style="font-size: x-small;">*<?php echo $mensageErro ?></span>
+                
 
-                                    <div style="display: flex; flex-direction:column; width:300px">
-                                        nome: <input type="text" style="width: 100%;" name="nome"value="<?php echo $nome ?>">
-                                        <span class="obrigatorio" style="font-size: x-small">*<?php echo $nomeErro ?></span>
-
-                                        email: <input type="email" name="email" value="<?php echo $email ?>">
-                                        <span class="obrigatorio" style="font-size: x-small">*<?php echo $emailErro ?></span>
-
-                                        Mensagem: <input type="text" style="height:60px " name="mensage" value="<?php echo $mensageUser ?>">
-                                        <span class="obrigatorio" style="font-size: x-small;">*<?php echo $mensageErro ?></span>
-
-                                    </div>
-
-                                    <input type="submit" value="Salvar" name="submit">
-                                </fieldset>
-                            </form>
-                        </div>
+                
+                <input type="submit" value="Salvar" name="submit">
+            </fieldset>
+        </form>
                     </div>
                 </div>
-
-
-
-
-
-
             </div>
 
-            <div id="copy-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Desenvolvido por <a href="#">Clawer Automóveis</a>&copy; 2022</p>
-                        </div>
+
+
+
+
+
+        </div>
+
+        <div id="copy-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Desenvolvido por <a href="#">Clawer Automóveis</a>&copy; 2022</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </footer>
 
 
