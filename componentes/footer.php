@@ -4,13 +4,13 @@ include "include/MySql.php";
 
 $nome = "";
 $email = "";
-$mensageUser="";
+$mensageUser = "";
 
 $nomeErro = "";
 $emailErro = "";
 $mensageErro = "";
 
-$codigo="";
+$codigo = "";
 
 
 if (empty($_POST['nome']))
@@ -36,7 +36,7 @@ if ($nome && $mensageUser) {
         if ($sql->rowCount() <= 0) {
             $sql = $pdo->prepare(" INSERT INTO MENSAGEM(codigo, nome, email, mensageUser)
                                                 VALUES (NULL, ?, ?, ?)");
-            if ($sql->execute(array( $nome, $email, $mensageUser))) {
+            if ($sql->execute(array($nome, $email, $mensageUser))) {
                 $msgErro = "Dados cadastrados com sucesso!";
                 $nome = "";
                 $email = "";
@@ -93,45 +93,46 @@ if ($nome && $mensageUser) {
 
 
                     <div class="col-md-6" id="contact-form">
-                    <div style="display:flex; justify-content:center">
-        <form method="POST" enctype="multipart/form-data">
-            <fieldset style="display: flex; flex-direction: column; width:100%">
-            
-                nome: <input type="text" name="nome" style="width: 400px; width:100%; border-radius:15px" value="<?php echo $nome ?>">
-                <span class="obrigatorio"style="font-size: x-small" >*<?php echo $nomeErro ?></span>
-                
-                email: <input type="email" style="border-radius:15px" name="email" value="<?php echo $email ?>">
-                <span class="obrigatorio" style="font-size: x-small">*<?php echo $emailErro ?></span>
-                
-                Mensagem: <input type="text" style= "height:60px" name="mensage" value="<?php echo $mensageUser ?>">
-                <span class="obrigatorio" style="font-size: x-small;">*<?php echo $mensageErro ?></span>
-                
+                        <div style="display:flex; justify-content:center">
+                            <form method="POST" enctype="multipart/form-data">
+                                <fieldset style="display: flex; flex-direction: column; width:100%">
 
-                
-                <input type="submit" value="Salvar" name="submit">
-            </fieldset>
-        </form>
+                                    nome: <input type="text" name="nome" style="width: 400px; width:100%; border-radius:15px" value="<?php echo $nome ?>">
+                                    <span class="obrigatorio" style="font-size: x-small">*<?php echo $nomeErro ?></span>
+
+                                    email: <input type="email" style="border-radius:15px" name="email" value="<?php echo $email ?>">
+                                    <span class="obrigatorio" style="font-size: x-small">*<?php echo $emailErro ?></span>
+
+                                    Mensagem: <input type="text" style="height:60px" name="mensage" value="<?php echo $mensageUser ?>">
+                                    <span class="obrigatorio" style="font-size: x-small;">*<?php echo $mensageErro ?></span>
+
+
+                                    <div style="padding-left:3px ;">
+                                        <input type="submit" style="width: 100px; border-radius:20px; height:50px; font-size: 20px; background-color:#0C2A43; border-color:white; color:white;" class="main-btn" value="Salvar" name="submit">
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <div id="copy-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Desenvolvido por <a href="#">Clawer Automóveis</a>&copy; 2022</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
         </div>
-
-        <div id="copy-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p>Desenvolvido por <a href="#">Clawer Automóveis</a>&copy; 2022</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </footer>
 
 
