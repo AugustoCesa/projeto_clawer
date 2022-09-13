@@ -97,13 +97,13 @@ if ($nome && $mensageUser) {
         <form method="POST" enctype="multipart/form-data">
             <fieldset style="display: flex; flex-direction: column; width:100%">
             
-                nome: <input type="text" name="nome" style="width: 400px; width:100%" value="<?php echo $nome ?>">
+                nome: <input type="text" name="nome" style="width: 400px; width:100%; border-radius:15px" value="<?php echo $nome ?>">
                 <span class="obrigatorio"style="font-size: x-small" >*<?php echo $nomeErro ?></span>
                 
-                email: <input type="email" name="email" value="<?php echo $email ?>">
+                email: <input type="email" style="border-radius:15px" name="email" value="<?php echo $email ?>">
                 <span class="obrigatorio" style="font-size: x-small">*<?php echo $emailErro ?></span>
                 
-                Mensagem: <input type="text" style= "height:60px " name="mensage" value="<?php echo $mensageUser ?>">
+                Mensagem: <input type="text" style= "height:60px" name="mensage" value="<?php echo $mensageUser ?>">
                 <span class="obrigatorio" style="font-size: x-small;">*<?php echo $mensageErro ?></span>
                 
 
