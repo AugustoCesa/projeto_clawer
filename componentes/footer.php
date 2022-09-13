@@ -10,7 +10,7 @@ $nomeErro = "";
 $emailErro = "";
 $mensageErro = "";
 
-$codigo = "";
+$codigo = ""; 
 
 
 if (empty($_POST['nome']))
