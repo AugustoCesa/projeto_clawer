@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (count($info) > 0) {
                 foreach ($info as $key => $values) {
                     $_SESSION['nome'] = $values['nome'];
-                    header('location:principal.php');
+                    header('location:index.php');
                 }
             } else {
                 $msgErro = "Usuario não cadastrado";

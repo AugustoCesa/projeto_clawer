@@ -2,6 +2,21 @@
 include 'componentes/nav.php'
 ?>
 
+<?php
+  session_start();
+?>
+
+<div style="display: flex; flex-direction: row; align-items: center; justify-content:space-between; margin-left:10px"  >
+<?php if (isset($_SESSION['nome'])){?>
+
+   <div style="margin-top:8px"> <p style="font-size:20px; margin-right:10px; color:white; background-color: #0C2A43; border-radius:10px">Olá <?php echo $_SESSION['nome']?>!!</p></div>
+    
+    <p style="font-size:15px; color:white; background-color:#0C2A43; border-radius:8px; margin-right:10px "><a style="text-decoration:none; color:white;  " href="logout.php">Logout</a></p>
+  <?php } else {?>
+    <h1 style=" margin-left:5px;color:white; font-size:12px" >Você não esta logado, faça o login para acessar todas as funcionalidades do site!</h1>
+
+    <?php } ?>
+</div>
 <main style="margin:20px; ">
 
   <div id="carouselExampleDark" style="width: 100%; display:flex; justify-content:center" class="carousel carousel-dark slide text-center" data-bs-ride="carousel">
@@ -66,3 +81,5 @@ include 'componentes/nav.php'
 <?php
 include 'componentes/footer.php'
 ?>
+
+
