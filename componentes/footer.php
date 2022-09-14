@@ -42,7 +42,6 @@ if ($nome && $mensageUser) {
                 $email = "";
                 $mensageUser = "";
 
-                header('location: ""');
             } else {
                 $msgErro = "Dados não cadastrados!";
             }
