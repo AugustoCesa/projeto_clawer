@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Cadstro de Usuario</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="assets/css/estillo.css">
 </head>
 
 <body>

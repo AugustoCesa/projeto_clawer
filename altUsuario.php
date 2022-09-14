@@ -82,7 +82,7 @@ if($sql->execute(array($email, $codigo))){
 <head>
     <meta charset="UTF-8">
     <title>Cadstro de Usuario</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="assets/css/estillo.css">
 </head>
 <body>
     <form method="POST">
