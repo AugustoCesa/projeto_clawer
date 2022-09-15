@@ -31,7 +31,7 @@ include 'header.php';
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Alugar carro</a></li>
             <li><a class="dropdown-item" href="#">Agendar test-drive</a></li>
-            <li><a class="dropdown-item" href="#">Comprar</a></li>
+            <li><a class="dropdown-item" href="catalogo.php">Catálogo</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">lojas</a></li>
           </ul>
