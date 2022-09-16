@@ -61,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
+    <div class="formu">
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
         <legend>Login</legend>
 
@@ -73,9 +74,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br>
         <a href="cadUsuario.php">Novo cadastro</a>
     </form>
+    </div>
     <span><?php echo $msgErro ?></span>
 
     <style>
+
+.formu{
+  display: flex;
+  justify-content: center;
+  
+}
+
         legend {
             color: white;
             text-align: center;

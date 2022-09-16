@@ -4,6 +4,7 @@ $strcon = mysqli_connect('localhost', 'root', '', 'projeto') or die("Erro ao con
 $sql = "SELECT * FROM CARROS";
 $resultado = mysqli_query($strcon, $sql) or die('Erro ao consultar o catálgo');
 
+if(mysqli_num_rows($sql_query) > 0){
 
 while ($produtos = mysqli_fetch_array($resultado)) {
 
@@ -52,6 +53,12 @@ while ($produtos = mysqli_fetch_array($resultado)) {
         </div>
 
     <?php
+
 }
+}else{
+    echo "Sem conteudo";
+}
+
+
     ?>
     <?php include "componentes/footer.php" ?>
