@@ -82,7 +82,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 .formu{
   display: flex;
   justify-content: center;
-  
+  margin: 0 auto ;
+  padding: 0 auto;
+  width: 100%;
 }
 
         legend {
@@ -123,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         form {
             background: #2f3640;
-            padding: 20px;
+            padding: 5px;
             margin-top: 200px;
             height: 350px;
             width: 350px;
@@ -137,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         form a {
             color: white;
             margin: 126px;
-
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
         }
 
         h2 {
