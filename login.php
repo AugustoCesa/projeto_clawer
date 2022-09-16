@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      margin: 0 auto;
      text-align: center;
      border: 2px solid #3498db;
-     padding: 12px 40px;
+     padding: 10px 40px;
      outline: none;
      color: white;
      border-radius: 24px;
