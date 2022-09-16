@@ -16,18 +16,18 @@ $sql_code ="SELECT * FROM carros WHERE imagem"
 
                 <div class="small-img-group pt-2">
                     <div class="small-img-col border border-4 ">
-                        <img class="small-img img-fluid" src="./images/foto2.png" width="100%"
+                        <img class="small-img img-fluid" src="" width="100%"
                             alt="">
                     </div>
                     <div class="small-img-col border border-4">
-                        <img class="small-img img-fluid" src="./images/MicrosoftTeams-image (7).png" width="100%"
+                        <img class="small-img img-fluid" src="" width="100%"
                             alt="">
                     </div>
                     <div class="small-img-col border border-4">
-                        <img class="small-img img-fluid " src="./images/foto2.png" width=100% alt="">
+                        <img class="small-img img-fluid " src="" width=100% alt="">
                     </div>
                     <div class="small-img-col border border-4">
-                        <img class="small-img img-fluid" src="./images/foto1.png" width="100%" alt="">
+                        <img class="small-img img-fluid" src="" width="100%" alt="">
                     </div>
                 </div>
             </div>
