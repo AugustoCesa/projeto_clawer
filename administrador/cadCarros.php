@@ -26,17 +26,79 @@ $kilometragemErro = "";
 $placaErro = "";
 $corErro = "";
 $categoriaErro = "";
+
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
-    if (!empty($_FILES['image1'.'image2'.'image3'.'image4'.'image5']["name"])) {
+    if (!empty($_FILES['image1']["name"])) {
         //Pegar informações do arquivo
-        $fileName = basename($_FILES['image1'.'image2'.'image3'.'image4'.'image5']['name']);
+        $fileName = basename($_FILES['image1']['name']);
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+        //Array de extensoes permitidas
+        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+        if (in_array($fileType, $allowTypes)) {
+         $image = $_FILES['image1']['tmp_name'];
+        $imgContent1 = file_get_contents($image);
+
+/////////////////////////////////////////////////////////
+           
+                if (!empty($_FILES['image2']["name"])) {
+                    //Pegar informações do arquivo
+                    $fileName = basename($_FILES['image2']['name']);
+                    $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+                    //Array de extensoes permitidas
+                    $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+            
+                    if (in_array($fileType, $allowTypes)) {
+                    $image = $_FILES['image2']['tmp_name'];
+                    $imgContent2 = file_get_contents($image);
+            
+/////////////////////////////////////////////////////////////////////////
+          
+                      
+            if (!empty($_FILES['image3']["name"])) {
+            //Pegar informações do arquivo
+                $fileName = basename($_FILES['image3']['name']);
+                 $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+                //Array de extensoes permitidas
+                $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+
+                if (in_array($fileType, $allowTypes)) {
+                $image = $_FILES['image3']['tmp_name'];
+                $imgContent3 = file_get_contents($image);
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+
+    if (!empty($_FILES['image4']["name"])) {
+        //Pegar informações do arquivo
+        $fileName = basename($_FILES['image4']['name']);
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
         //Array de extensoes permitidas
         $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
 
         if (in_array($fileType, $allowTypes)) {
-            $image = $_FILES['image1'.'image2'.'image3'.'image4'.'image5']['tmp_name'];
-            $imgContent = file_get_contents($image);
+            $image = $_FILES['image4']['tmp_name'];
+            $imgContent1 = file_get_contents($image);
+
+            /////////////////////////////////////////////////////////////////////
+
+           
+    if (!empty($_FILES['image5']["name"])) {
+        //Pegar informações do arquivo
+        $fileName = basename($_FILES['image5']['name']);
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+        //Array de extensoes permitidas
+        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+
+        if (in_array($fileType, $allowTypes)) {
+            $image = $_FILES['image5']['tmp_name'];
+            $imgContent1 = file_get_contents($image);
+
+
+
+
+
+
 
             if (empty($_POST['marca']))
                 $marcaErro = "Marca é obrigatório!";
@@ -135,9 +197,30 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
         } else {
             $msgErro = "Somente arquivos JPG, JPEG, PNG e GIFF são permitidos";
         }
+   
     } else {
         $msgErro = "Imagem não selecionada!!";
-    }
+        }
+
+
+
+    } else {
+        $msgErro = "Imagem não selecionada!!";
+        }
+
+
+
+    } else {
+        $msgErro = "Imagem não selecionada!!";
+        }
+
+
+
+           } else {
+             $msgErro = "Imagem não selecionada!!";
+            }
+   
+   
 }
 
 ?>

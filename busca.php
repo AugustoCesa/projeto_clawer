@@ -37,7 +37,7 @@ OR categoria LIKE '%$pesquisa%'";
 
 
 
-            <p colspan="4" style="color: white; font-size:40px">Nenhum resultado encontrado </p>
+            <p colspan="4" style="color: white; font-size:40px; font-family:'Franklin Gothic Medium', 'Arial Narrow'">Nenhum resultado encontrado </p>
 
 
         <?php
@@ -51,7 +51,7 @@ OR categoria LIKE '%$pesquisa%'";
                         foreach ($sql_query as $dados) {
                             /*Card display code goes here*/
                     ?>
-                            <div class="container resultado" style=" border:solid white 10px;display: flex; flex-direction: column; margin-top: 100px; font-size:22px; background-color:white; width: 300px; height: 470px; border-radius: 8px;">
+                            <div class="container resultado" style=" border:solid #0C2A43 10px;display: flex; flex-direction: column; margin-top: 100px; font-size:22px; background-color:#0C2A43; width: 300px; height: 470px; border-radius: 8px; color:white">
 
                                 <img style="width:240px; border-radius:11px" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($dados['imagem']) ?>" class="img-fluid">
                                 <p><strong> Marca: <?php echo $dados['marca']; ?></Strong></p>
