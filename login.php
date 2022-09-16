@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <span class="obrigatorio"><?php echo $senhaErro ?></span>
         <input type="submit" value="Enviar" name="login">
         <br>
-        <a href="cadUsuario.php">Novo cadastro</a>
+        <a style="text-align: center;" href="cadUsuario.php">Novo cadastro</a>
     </form>
     </div>
     <span><?php echo $msgErro ?></span>
@@ -123,8 +123,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         form {
             background: #2f3640;
-            padding: 30px;
-            margin: 300px 700px;
+            padding: 20px;
+            margin-top: 200px;
             height: 350px;
             width: 350px;
             border-radius: 12px;
