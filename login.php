@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <br>
         
-        <a style="text-align: center;" href="cadUsuario.php">Novo cadastro</a>
+        <a style="text-align: center;" href="cadUsuario.php"><p>Novo cadastro </p></a>
     </form>
     </div>
     <span><?php echo $msgErro ?></span>
