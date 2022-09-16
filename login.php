@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br>
         <input type="password" name="senha" placeholder="Digite sua senha" value="<?php echo $senha ?>">
         <span class="obrigatorio"><?php echo $senhaErro ?></span>
-        <input type="submit" value="Enviar" name="login">
+        <input class="bottom" type="submit" value="Enviar" name="login">
         <br>
         <a style="text-align: center;" href="cadUsuario.php">Novo cadastro</a>
     </form>
@@ -87,6 +87,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   width: 100%;
 }
 
+.bottom{
+     border: 0;
+     background: #2f3640;
+     display: block;
+     margin: 0 auto;
+     text-align: center;
+     border: 2px solid #3498db;
+     padding: 12px 40px;
+     outline: none;
+     color: white;
+     border-radius: 24px;
+     transition: 0.25s;
+     cursor: pointer;
+     font-size: 1em;
+     color: white;
+
+}
+
         legend {
             color: white;
             text-align: center;
@@ -101,8 +119,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         input[type="text"],
-        [type="password"],
-        [type="submit"] {
+        [type="password"]
+         {
             border: 0;
             background: #2f3640;
             display: block;
