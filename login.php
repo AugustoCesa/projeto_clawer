@@ -70,8 +70,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br>
         <input type="password" name="senha" placeholder="Digite sua senha" value="<?php echo $senha ?>">
         <span class="obrigatorio"><?php echo $senhaErro ?></span>
+        <div style="margin-top: 4px;">
         <input class="bottom" type="submit" value="Enviar" name="login">
+        </div>
         <br>
+        
         <a style="text-align: center;" href="cadUsuario.php">Novo cadastro</a>
     </form>
     </div>
