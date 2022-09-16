@@ -21,7 +21,15 @@ if ($sql->execute()) {
     echo "  <th>placa</th>";
     echo "  <th>cor</th>";
     echo "  <th>preco</th>";
-    echo "  <th>imagem</th>";
+    echo "  <th>imagem1</th>";
+    echo "  <th>imagem2</th>";
+    echo "  <th>imagem3</th>";
+    echo "  <th>imagem4</th>";
+    echo "  <th>imagem5</th>";
+
+
+
+
     echo "  <th>alterar</th>";
     echo "  <th>excluir</th>";
     echo "</tr>";
@@ -40,8 +48,22 @@ if ($sql->execute()) {
         echo "<td>" . $value['cor'] . "</td>";
         echo "<td>" . $value['preco'] . "</td>";
 
-        $imagem = $value['imagem'];
+        $imagem = $value['imagem1'];
         echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem) . '"></td>';
+
+
+        $imagem = $value['imagem2'];
+        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem) . '"></td>';
+
+        $imagem = $value['imagem3'];
+        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem) . '"></td>';
+
+        $imagem = $value['imagem4'];
+        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem) . '"></td>';
+
+        $imagem = $value['imagem5'];
+        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem) . '"></td>';
+
 
         echo "<td><center><a href='Altcarro.php?id=" . $value['codCarro'] . "'>(+)</a></center></td>";
         echo "<td><center><a href='delUsuario.php?id=" . $value['codCarro'] . "'>(-)</a></center></td>";
