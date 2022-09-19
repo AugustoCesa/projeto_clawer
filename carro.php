@@ -48,7 +48,7 @@ $sql_code ="SELECT * FROM carros WHERE imagem"
         var MainImg = document.getElementById('MainImg');
         var smallimg = document.getElementsByClassName('small-img');
 
-        smallimg[0].onclick = function () {
+        smallimg[0].onclick = function (<?php ?>) {
             MainImg.src = smallimg[0].src;
         }
         smallimg[1].onclick = function () {
