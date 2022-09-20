@@ -158,7 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                                                 if ($sql->execute(array($modelo))) {
                                                     if ($sql->rowCount() <= 0) {
                                                         $sql = $pdo->prepare("INSERT INTO carros (codCarro, marca, nome, modelo, preco, ano, cambio, portas, combustivel, kilometragem, placa, cor, imagem1, imagem2, imagem3, imagem4, categoria)
-                                                VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                                                VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                                                         if ($sql->execute(array($marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent1, $imgContent2, $imgContent3, $imgContent4, $categoria))) {
                                                             $msgErro = "Dados cadastrados com sucesso!";
                                                             $nome = "";

@@ -10,27 +10,26 @@ if ($sql->execute()) {
     ?>
 <div style="display: flex; justify-content:center; width:100%">
     <?php
-    echo "<table border='2'>";
-    echo "<tr>";
-    echo "  <th>Código</th>";
-    echo "  <th>marca</th>";
-    echo "  <th>nome</th>";
-    echo "  <th>modelo</th>";
-    echo "  <th>ano</th>";
-    echo "  <th>cambio</th>";
-    echo "  <th>portas</th>";
-    echo "  <th>combustivel</th>";
-    echo "  <th>kilometragem</th>";
-    echo "  <th>placa</th>";
-    echo "  <th>cor</th>";
-    echo "  <th>preco</th>";
-    echo " <th> categoria<th>";
+     echo "<table border='1'>";
+     echo "<tr>";
+     echo "  <th>Código</th>";
+     echo "  <th>marca</th>";
+     echo "  <th>nome</th>";
+     echo "  <th>modelo</th>";
+     echo "  <th>ano</th>";
+     echo "  <th>cambio</th>";
+     echo "  <th>portas</th>";
+     echo "  <th>combustivel</th>";
+     echo "  <th>kilometragem</th>";
+     echo "  <th>placa</th>";
+     echo "  <th>cor</th>";
+     echo "  <th>preco</th>";
+     echo "  <th>categoria</th>";
+     echo "  <th>imagem1</th>";
+     echo "  <th>imagem2</th>";
+     echo "  <th>imagem3</th>";
+     echo "  <th>imagem4</th>";
     
-    echo "  <th>imagem1</th>";
-    echo "  <th>imagem2</th>";
-    echo "  <th>imagem3</th>";
-    echo "  <th>imagem4</th>";
-    echo "  <th>imagem5</th>";
 
 
     echo "</tr>";
@@ -61,8 +60,7 @@ if ($sql->execute()) {
          $imagem4 = $value['imagem4'];
         echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem4) . '"></td>';
 
-          $imagem5 = $value['imagem5'];
-        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem5) . '"></td>';
+          
 
     }
      
