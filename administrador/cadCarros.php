@@ -83,16 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                                     /////////////////////////////////////////////////////////////////////
 
 
-                                    if (!empty($_FILES['image5']["name"])) {
-                                        //Pegar informações do arquivo
-                                        $fileName = basename($_FILES['image5']['name']);
-                                        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-                                        //Array de extensoes permitidas
-                                        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
-
-                                        if (in_array($fileType, $allowTypes)) {
-                                            $image = $_FILES['image5']['tmp_name'];
-                                            $imgContent5 = file_get_contents($image);
+                                    
 
 
 
@@ -166,9 +157,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                                                 $sql = $pdo->prepare("SELECT * FROM carros WHERE modelo = ?");
                                                 if ($sql->execute(array($modelo))) {
                                                     if ($sql->rowCount() <= 0) {
-                                                        $sql = $pdo->prepare("INSERT INTO carros (codCarro, marca, nome, modelo, preco, ano, cambio, portas, combustivel, kilometragem, placa, cor, imagem1, imagem2, imagem3, imagem4, imagem5, categoria)
+                                                        $sql = $pdo->prepare("INSERT INTO carros (codCarro, marca, nome, modelo, preco, ano, cambio, portas, combustivel, kilometragem, placa, cor, imagem1, imagem2, imagem3, imagem4, categoria)
                                                 VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                                                        if ($sql->execute(array($marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent1, $imgContent2, $imgContent3, $imgContent4, $imgContent5, $categoria))) {
+                                                        if ($sql->execute(array($marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent1, $imgContent2, $imgContent3, $imgContent4, $categoria))) {
                                                             $msgErro = "Dados cadastrados com sucesso!";
                                                             $nome = "";
                                                             $modelo = "";
@@ -213,8 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                 }
             }
         }
-    }
-}
+   
 
 ?>
 
@@ -278,7 +268,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
                 <input type="file" name="image4">
 
-                <input type="file" name="image5">
 
                 <br>
                 <input type="submit" value="Salvar" name="submit">

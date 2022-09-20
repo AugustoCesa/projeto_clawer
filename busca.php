@@ -43,6 +43,8 @@ OR categoria LIKE '%$pesquisa%'";
         <?php
         } else {
         ?>
+
+        
             <div class="container py-5">
                 <div class="row mt-3">
                     <!-- Your loop code goes here within the container -->
@@ -88,7 +90,7 @@ OR categoria LIKE '%$pesquisa%'";
     ?>
 
 </div>
-
+</table>
 
 <div class="fot" style="margin-top: 300px">
     <?php include "componentes/footer.php" ?>
