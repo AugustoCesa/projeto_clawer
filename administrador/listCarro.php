@@ -22,6 +22,7 @@ if ($sql->execute()) {
     echo "  <th>cor</th>";
     echo "  <th>preco</th>";
     echo " <th> categoria<th>";
+    
     echo "  <th>imagem1</th>";
     echo "  <th>imagem2</th>";
     echo "  <th>imagem3</th>";
@@ -32,7 +33,7 @@ if ($sql->execute()) {
     echo "</tr>";
     foreach ($info as $key => $value) {
         echo "<tr>";
-        echo "<td>" . $value['codCarro'] . "</td>";
+        echo "<td>" . $value['CodCarro'] . "</td>";
         echo "<td>" . $value['marca'] . "</td>";
         echo "<td>" . $value['nome'] . "</td>";
         echo "<td>" . $value['modelo'] . "</td>";
@@ -45,20 +46,24 @@ if ($sql->execute()) {
         echo "<td>" . $value['cor'] . "</td>";
         echo "<td>" . $value['preco'] . "</td>";
         echo "<td>" . $value['categoria'] . "</td>";
-        $imagem = $value['imagem1'];
-        $imagem = $value['imagem2'];
-        $imagem = $value['imagem3'];
-        $imagem = $value['imagem4'];
-        $imagem = $value['imagem5'];
 
+         $imagem1 = $value['imagem1'];
+        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem1) . '"></td>';
 
+         $imagem2= $value['imagem2'];
+        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem2) . '"></td>';
 
+          $imagem3 = $value['imagem3'];
+        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem3) . '"></td>';
 
-        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem) . '"></td>';
+         $imagem4 = $value['imagem4'];
+        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem4) . '"></td>';
+
+          $imagem5 = $value['imagem5'];
+        echo '<td><img style="width:80px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($imagem5) . '"></td>';
 
     }
      
      
     echo "</table>";
 }
-?>

@@ -53,7 +53,7 @@ OR categoria LIKE '%$pesquisa%'";
                     ?>
                             <div class="container resultado" style=" border:solid #0C2A43 10px;display: flex; flex-direction: column; margin-top: 100px; font-size:22px; background-color:#0C2A43; width: 300px; height: 470px; border-radius: 8px; color:white">
 
-                                <img style="width:240px; border-radius:11px" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($dados['imagem']) ?>" class="img-fluid">
+                                <img style="width:240px; border-radius:11px" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($dados['imagem1']) ?>" class="img-fluid">
                                 <p><strong> Marca: <?php echo $dados['marca']; ?></Strong></p>
                                 <div class="model" style="display: flex;">
 
