@@ -4,6 +4,7 @@
     
     .container {
         text-align: center;
+        font-family: 'Times New Roman', Times, serif;
     }
     
     .words {
@@ -20,4 +21,26 @@
     
     .tamanho input[type="checkbox" i] {
         margin: 10px;
+    }
+    
+    .color {
+        color: blue;
+    }
+    
+    select,
+    option {
+        line-height: 40px;
+        font-size: 20px;
+        height: 40px;
+    }
+    
+    .fonte {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    input[type=text] {
+        padding: 10px 10px;
+        margin: 6px 0;
+        /*border: 1px solid #555;*/
+        outline: none;
     }
