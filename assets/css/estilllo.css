@@ -1,0 +1,41 @@
+html {
+    font-family: 'Bebas Neue';
+
+}
+
+
+#logo{
+    border-radius: 20px;
+}
+
+
+/*footer*/
+
+
+.corfoot{
+    color: white;
+    background-image: linear-gradient(#0C2A43, rgb(0, 0, 0));
+}
+body{
+    background: linear-gradient(#2046b0, #101c66);
+    color: white;
+}
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+body {
+    background: linear-gradient(#2046b0, #101c66);
+    color: white;
+}
+.info hr{
+    color:black;
+    height: 4px;
+}
