@@ -1,5 +1,10 @@
 <?php
-    include "nav.php";
+    include "componentes/nav.php";
+    include "include/MySql.php";
+
+    $sql = $pdo->prepare('SELECT * FROM carros');
+    if ($sql->execute()) {
+        $info = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>
         <style>
         .small-img-group{
@@ -70,13 +75,18 @@
                 Custa em Portugal 296 mil euros.</p>
             </div>
         <hr>
+         <?php
+               foreach ($info as $key => $value) {
+                
+
+              ?>
             <div class="col-lg-5 col-md-12 col-12">
                 <h2>Informações do veiculo</h2>
                 <div class="info" style="font-size: 15px;">
                     <ul>
                         <hr>
-                        <li><p><b>Marca</b></p>
-                        <p>Lamborguini</p></li>
+                        <li><p><b></b></p>
+                        <p><?php echo $value=['marca'] ?></p></li>
                         <hr>
                         <li><h4>Modelo</h4></li>
                         <p>Urus</p>
@@ -107,13 +117,6 @@
 
 
 
-
-
-
-   <?php
-    include "footer.php";
-   ?>
-
     <script>
         var MainImg = document.getElementById('MainImg');
         var smallimg = document.getElementsByClassName('small-img');
@@ -135,6 +138,14 @@
 
     </script>
 
-</body>
+
+
 
 </html>
+
+<?php
+               }
+
+            }
+    include "componentes/footer.php";
+   ?>
