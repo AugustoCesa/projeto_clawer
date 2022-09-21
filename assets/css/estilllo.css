@@ -20,8 +20,22 @@ body{
     background: linear-gradient(#2046b0, #101c66);
     color: white;
 }
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .small-img-col {
     flex-basis: 24%;
     cursor: pointer;
 }
 
+body {
+    background: linear-gradient(#2046b0, #101c66);
+    color: white;
+}
+.info hr{
+    color:black;
+    height: 4px;
+}
