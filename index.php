@@ -2,9 +2,7 @@
 include 'componentes/nav.php'
 ?>
 
-<?php
-  session_start();
-?>
+
 
 <div style="display: flex; flex-direction: row; align-items: center; justify-content:space-between; margin-left:10px"  >
 <?php if (isset($_SESSION['nome'])){?>

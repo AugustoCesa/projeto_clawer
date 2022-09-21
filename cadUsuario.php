@@ -149,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
             flex: 1 1 auto;
         }
 
-        .container_input .input {}
+       
 
         form {
             background-color: #2f3640;

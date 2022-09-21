@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 foreach ($info as $key => $values) {
                     $_SESSION['nome'] = $values['nome'];
                     $_SESSION['administrador'] = $values['administrador'];
-                    header('location:principal.php');
+                    header('location:index.php');
                 }
             } else {
                 $msgErro = "Usuario não cadastrado";
@@ -75,12 +75,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <span class="obrigatorio"><?php echo $senhaErro ?></span>
         <input type="submit" value="Enviar" name="login">
         <br>
-<<<<<<< HEAD
+
         
         <a style="text-align: center;" href="cadUsuario.php"><p>Novo cadastro </p></a>
-=======
-       
->>>>>>> 3f55cc3c1269294542bf3457534bf8719e5c5136
+
     </form>
     <span><?php echo $msgErro ?></span>
 
