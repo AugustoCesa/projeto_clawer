@@ -5,6 +5,8 @@ $nome = "";
 $email = "";
 $telefone = "";
 $senha = "";
+$administrador=0;
+
 
 $nomeErro = "";
 $emailErro = "";
@@ -34,19 +36,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     else
         $senha = $_POST['senha'];
 
+    if (isset($_POST["administrador"]))
+        $administrador = 1;
+    else
+        $administrador = 0;
+
+
 
     if ($email && $nome && $senha && $telefone) {
         //Verificar se ja existe o email
         $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email = ?");
         if ($sql->execute(array($email))) {
             if ($sql->rowCount() <= 0) {
-                $sql = $pdo->prepare("INSERT INTO USUARIO (codigo, nome, email, telefone, senha ) VALUES (null, ?, ?, ?, ?)");
-                if ($sql->execute(array($nome, $email, $telefone, md5($senha)))) {
+                $sql = $pdo->prepare("INSERT INTO USUARIO (codigo, nome, email, telefone, senha, administrador ) VALUES (null, ?, ?, ?, ?, ?)");
+                if ($sql->execute(array($nome, $email, $telefone, md5($senha), $administrador))) {
                     $msgErro = "Dados cadastrados com sucesso!";
                     $nome = "";
                     $email = "";
                     $telefone = "";
                     $senha = "";
+                    //$administrador = 0;
                     header("location:login.php");
                 } else {
                     $msgErro = "Dados não cadastrados!";
@@ -105,6 +114,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                 <span class="obrigatorio"><?php echo $senhaErro ?></span>
             </div>
         </div>
+        <div class="container_input">
+            <div class="label">Administrado</div>
+            <div class="input">
+                <?php
+                if ($administrador==1){
+                ?>
+                <input type="checkbox" name="administrador">
+                <?php
+                }else{  
+                ?>
+                <input type="checkbox" name="administrador" disabled>
+                <?php
+                }
+                ?>
+            </div>
+        </div>
         <input type="submit" value="Salvar" name="submit">
         <span><?php echo $msgErro ?></span>
     </form>
@@ -124,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
             flex: 1 1 auto;
         }
 
-       
+        .container_input .input {}
 
         form {
             background-color: #2f3640;

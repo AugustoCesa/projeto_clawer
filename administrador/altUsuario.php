@@ -1,12 +1,13 @@
 <?php
-    include "../include/MySql.php";
+    include "include/MySql.php";
 
     $codigo = "";
     $nome = "";
     $email = "";
     $telefone = "";
     $senha = "";
-
+    $administrador=0;
+ 
 
     $nomeErro = "";
     $emailErro = "";
@@ -25,6 +26,7 @@
              $email = $value['email'];
              $telefone = $value['telefone'];
              $senha = '';//$value['senha'];
+             $administrador=$value['administrador'];   
             }
         }
 
@@ -52,14 +54,19 @@
         else
         $senha = $_POST['senha'];
 
+        if (isset($_POST["administrador"]))
+            $administrador = 1;
+        else
+            $administrador = 0;        
+
         if ($email && $nome && $senha && $telefone) {
 //Verificar se ja existe o email
 $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email = ? AND codigo <> ?");
 if($sql->execute(array($email, $codigo))){
     if($sql->rowCount() <= 0){
-        $sql = $pdo->prepare("UPDATE USUARIO SET codigo=?, nome=?, email=?, telefone=?, senha=? WHERE codigo=?");
+        $sql = $pdo->prepare("UPDATE USUARIO SET codigo=?, nome=?, email=?, telefone=?, senha=?, administrador=? WHERE codigo=?");
 
-       if ($sql->execute(array($codigo,$nome, $email, $telefone, md5($senha),$codigo))){
+       if ($sql->execute(array($codigo,$nome, $email, $telefone, md5($senha),$administrador, $codigo))){
            $msgErro = "Dados alterados com sucesso!";
            header("location:listUsuario.php");
     }else{
@@ -101,6 +108,18 @@ if($sql->execute(array($email, $codigo))){
             Senha: <input type="password" name="senha" value="<?php echo $senha?>">
             <span  class="obrigatorio">*<?php echo $senhaErro?></span>
             <br> 
+            <?php
+            if ($administrador==1){
+            ?>
+            <input type="checkbox" name="administrador" checked>
+            <?php
+            }else{  
+            ?>
+            <input type="checkbox" name="administrador" disabled>
+            <?php
+            }
+            ?>
+        </div>            
             <input type="submit" value="Salvar" name="submit">
         </fieldset>
     </form>

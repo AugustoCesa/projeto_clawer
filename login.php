@@ -4,12 +4,14 @@ include "include/functions.php";
 
 session_start();
 $_SESSION['nome'] = "";
+$_SESSION['administrador'] = "";
 
 $email = "";
 $emailErro = "";
 $senha = "";
 $senhaErro = "";
 $msgErro = "";
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($_POST['email'])) {
@@ -31,7 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (count($info) > 0) {
                 foreach ($info as $key => $values) {
                     $_SESSION['nome'] = $values['nome'];
-                    header('location:index.php');
+                    $_SESSION['administrador'] = $values['administrador'];
+                    header('location:principal.php');
                 }
             } else {
                 $msgErro = "Usuario não cadastrado";
@@ -39,11 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $msgErro = "Usuario não cadastrado!";
         }
+         
+        
     }
 }
-
-
-
+ 
+    
 
 
 
@@ -61,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <div class="formu">
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
         <legend>Login</legend>
 
@@ -70,44 +73,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br>
         <input type="password" name="senha" placeholder="Digite sua senha" value="<?php echo $senha ?>">
         <span class="obrigatorio"><?php echo $senhaErro ?></span>
-        <div style="margin-top: 7px;">
-        <input class="bottom" type="submit" value="Enviar" name="login">
-        </div>
+        <input type="submit" value="Enviar" name="login">
         <br>
+<<<<<<< HEAD
         
         <a style="text-align: center;" href="cadUsuario.php"><p>Novo cadastro </p></a>
+=======
+       
+>>>>>>> 3f55cc3c1269294542bf3457534bf8719e5c5136
     </form>
-    </div>
     <span><?php echo $msgErro ?></span>
 
     <style>
-
-.formu{
-  display: flex;
-  justify-content: center;
-  margin: 0 auto ;
-  padding: 0 auto;
-  width: 100%;
-}
-
-.bottom{
-     border: 0;
-     background: #2f3640;
-     display: block;
-     margin: 0 auto;
-     text-align: center;
-     border: 2px solid #3498db;
-     padding: 10px 40px;
-     outline: none;
-     color: white;
-     border-radius: 24px;
-     transition: 0.25s;
-     cursor: pointer;
-     font-size: 1em;
-     color: white;
-
-}
-
         legend {
             color: white;
             text-align: center;
@@ -122,8 +99,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         input[type="text"],
-        [type="password"]
-         {
+        [type="password"],
+        [type="submit"] {
             border: 0;
             background: #2f3640;
             display: block;
@@ -146,8 +123,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         form {
             background: #2f3640;
-            padding: 5px;
-            margin-top: 200px;
+            padding: 30px;
+            margin: 300px 700px;
             height: 350px;
             width: 350px;
             border-radius: 12px;
@@ -160,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         form a {
             color: white;
             margin: 126px;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+
         }
 
         h2 {

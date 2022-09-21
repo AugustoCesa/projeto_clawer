@@ -1,5 +1,6 @@
 <?php 
 include 'header.php';
+session_start();
 ?>
 
 
@@ -31,13 +32,19 @@ include 'header.php';
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Alugar carro</a></li>
             <li><a class="dropdown-item" href="#">Agendar test-drive</a></li>
-            <li><a class="dropdown-item" href="catalogo.php">Catálogo</a></li>
+            <li><a class="dropdown-item" href="#">Comprar</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">lojas</a></li>
           </ul>
         </li>
+        <?php if ($_SESSION['administrador']==1){?>
+        <li class="nav-item">
+          <a class="nav-link active" href="administrador/intAdm.php">Administrador</a>
+        </li>
+        <?php
+        }
+        ?>
        
-        
         
       </ul>
       <form class="d-flex" role="search" action="busca.php" method="GET">
