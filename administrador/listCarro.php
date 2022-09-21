@@ -7,9 +7,7 @@ $sql = $pdo->prepare('SELECT * FROM carros');
 if ($sql->execute()) {
     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-    ?>
-<div style="display: flex; justify-content:center; width:100%">
-    <?php
+    
      echo "<table border='1'>";
      echo "<tr>";
      echo "  <th>Código</th>";
@@ -34,6 +32,7 @@ if ($sql->execute()) {
 
     echo "</tr>";
     foreach ($info as $key => $value) {
+        echo "</tr>";
         echo "<td>" . $value['CodCarro'] . "</td>";
         echo "<td>" . $value['marca'] . "</td>";
         echo "<td>" . $value['nome'] . "</td>";
@@ -69,4 +68,3 @@ if ($sql->execute()) {
 }
 ?>
 
-</div>
