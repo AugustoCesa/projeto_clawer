@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    if ($_SESSION['administrador']==1){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,11 +40,10 @@
 
         </div>
     </div>
-
-
-
-
-
 </body>
-
 </html>
+<?php
+    } else {
+       die ('oops!');
+    }   
+?>
