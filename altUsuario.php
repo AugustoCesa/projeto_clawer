@@ -7,7 +7,7 @@
     $telefone = "";
     $senha = "";
     $administrador=0;
-
+ 
 
     $nomeErro = "";
     $emailErro = "";
