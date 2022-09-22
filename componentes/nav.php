@@ -20,7 +20,7 @@ session_start();
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Redes sociais</a>
+          <a class="nav-link active" href="Redes_sociais.php">Redes sociais</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="componentes/login.php">Login</a>
@@ -30,7 +30,7 @@ session_start();
             Serviços
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Alugar carro</a></li>
+            <li><a class="dropdown-item" href="alugar.php">Alugar carro</a></li>
             <li><a class="dropdown-item" href="test_drive.php">Agendar test-drive</a></li>
             <li><a class="dropdown-item" href="catalogo.php">Catálogo</a></li>
             <li><hr class="dropdown-divider"></li>

@@ -7,7 +7,7 @@ include "componentes/nav.php";
 
 
 
-<h3 style=" width:100%; font-family:'Bebas Neue'; color:white; margin:20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Resultados para: <?php print $_GET['busca'] ?></h3>
+<h4 style=" width:100%; font-family:'Bebas Neue'; color:white; margin:20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Resultados para: <?php print $_GET['busca'] ?></h4>
 
 
 <br>
@@ -40,7 +40,7 @@ OR categoria LIKE '%$pesquisa%'";
 
 
 
-            <p colspan="4" style="color: white; font-size:40px; font-family:'Franklin Gothic Medium', 'Arial Narrow'">Nenhum resultado encontrado </p>
+            <p colspan="4" style="color: white; font-size:40px; font-family:'Franklin Gothic Medium', 'Arial Narrow'">Nenhum resultado encontrado. </p>
 
 
         <?php

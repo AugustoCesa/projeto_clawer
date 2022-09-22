@@ -220,7 +220,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
 <body>
 
-    <div style="display:flex; justify-content:center">
+    <div style="display:flex; justify-content:center; font-family:'Franklin Gothic Medium'">
         <form method="POST" enctype="multipart/form-data">
             <fieldset style="display: flex; flex-direction: column;">
                 <legend>Cadastro de Carro</legend>
