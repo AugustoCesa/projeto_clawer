@@ -1,8 +1,10 @@
 <?php
 include "include/conBusca.php";
-include "componentes/nav.php"
-
+include "componentes/nav.php";
 ?>
+
+
+
 
 
 <h3 style=" width:100%; font-family:'Bebas Neue'; color:white; margin:20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Resultados para: <?php print $_GET['busca'] ?></h3>
@@ -15,6 +17,7 @@ include "componentes/nav.php"
 
 
     <?php
+
     if (!isset($_GET['busca'])) {
     ?>
         <tr>
@@ -42,9 +45,12 @@ OR categoria LIKE '%$pesquisa%'";
 
         <?php
         } else {
+
+
+
         ?>
 
-        
+
             <div class="container py-5">
                 <div class="row mt-3">
                     <!-- Your loop code goes here within the container -->
@@ -52,6 +58,7 @@ OR categoria LIKE '%$pesquisa%'";
                     if (mysqli_num_rows($sql_query) > 0) {
                         foreach ($sql_query as $dados) {
                             /*Card display code goes here*/
+
                     ?>
                             <div class="container resultado" style=" border:solid #0C2A43 10px;display: flex; flex-direction: column; margin-top: 100px; font-size:22px; background-color:#0C2A43; width: 300px; height: 470px; border-radius: 8px; color:white">
 
@@ -73,8 +80,11 @@ OR categoria LIKE '%$pesquisa%'";
                                     <p><?php echo $dados['categoria'] ?></p>
                                 </strong>
                                 <p style="font-size: 29px;"><strong><?php echo $dados['preco']; ?></strong></p>
+
+
                             </div>
                     <?php
+
                         }
                     } else {
                         echo "No record found";

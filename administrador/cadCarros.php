@@ -13,6 +13,7 @@ $kilometragem = "";
 $placa = "";
 $cor = "";
 $categoria = "";
+$descricao = "";
 
 $marcaErro = "";
 $nomeErro = "";
@@ -26,6 +27,8 @@ $kilometragemErro = "";
 $placaErro = "";
 $corErro = "";
 $categoriaErro = "";
+$descricaoErro = "";
+
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     if (!empty($_FILES['image1']["name"])) {
@@ -83,116 +86,108 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                                     /////////////////////////////////////////////////////////////////////
 
 
-                                    
+                                    if (empty($_POST['marca']))
+                                        $marcaErro = "Marca é obrigatório!";
+                                    else
+                                        $marca = $_POST['marca'];
+
+                                    if (empty($_POST['nome']))
+                                        $nomeErro = "Nome é obrigatório!";
+                                    else
+                                        $nome = $_POST['nome'];
+
+                                    if (empty($_POST['modelo']))
+                                        $modeloErro = "Modelo é obrigatório!";
+                                    else
+                                        $modelo = $_POST['modelo'];
+
+                                    if (empty($_POST['preco']))
+                                        $precoErro = "preço é obrigatório!";
+                                    else
+                                        $preco = $_POST['preco'];
+
+                                    if (empty($_POST['ano']))
+                                        $anoErro = "ano é obrigatório!";
+                                    else
+                                        $ano = $_POST['ano'];
+
+                                    if (empty($_POST['cambio']))
+                                        $precoErro = "Cambio é obrigatório!";
+                                    else
+                                        $cambio = $_POST['cambio'];
+
+                                    if (empty($_POST['portas']))
+                                        $portasErro = "Portas é obrigatório!";
+                                    else
+                                        $portas = $_POST['portas'];
+
+                                    if (empty($_POST['combustivel']))
+                                        $combustivelErro = "preço é obrigatório!";
+                                    else
+                                        $combustivel = $_POST['combustivel'];
+
+                                    if (empty($_POST['kilometragem']))
+                                        $kilometragemErro = "kilometragem é obrigatório!";
+                                    else
+                                        $kilometragem = $_POST['kilometragem'];
+
+                                    if (empty($_POST['placa']))
+                                        $placaErro = "placa é obrigatório!";
+                                    else
+                                        $placa = $_POST['placa'];
+
+                                    if (empty($_POST['cor']))
+                                        $corErro = "cor é obrigatório!";
+                                    else
+                                        $cor = $_POST['cor'];
+
+                                    if (empty($_POST['categoria']))
+                                        $categoriaErro = "categoria é obrigatório";
+                                    else
+                                        $categoria = $_POST['categoria'];
+
+                                    if (empty($_POST['descricao']))
+                                        $descricaoErro = "descrição é obrigatório";
+                                    else
+                                        $descricao = $_POST['descricao'];
 
 
-
-
-
-
-
-                                            if (empty($_POST['marca']))
-                                                $marcaErro = "Marca é obrigatório!";
-                                            else
-                                                $marca = $_POST['marca'];
-
-                                            if (empty($_POST['nome']))
-                                                $nomeErro = "Nome é obrigatório!";
-                                            else
-                                                $nome = $_POST['nome'];
-
-                                            if (empty($_POST['modelo']))
-                                                $modeloErro = "Modelo é obrigatório!";
-                                            else
-                                                $modelo = $_POST['modelo'];
-
-                                            if (empty($_POST['preco']))
-                                                $precoErro = "preço é obrigatório!";
-                                            else
-                                                $preco = $_POST['preco'];
-
-                                            if (empty($_POST['ano']))
-                                                $anoErro = "ano é obrigatório!";
-                                            else
-                                                $ano = $_POST['ano'];
-
-                                            if (empty($_POST['cambio']))
-                                                $precoErro = "Cambio é obrigatório!";
-                                            else
-                                                $cambio = $_POST['cambio'];
-
-                                            if (empty($_POST['portas']))
-                                                $portasErro = "Portas é obrigatório!";
-                                            else
-                                                $portas = $_POST['portas'];
-
-                                            if (empty($_POST['combustivel']))
-                                                $combustivelErro = "preço é obrigatório!";
-                                            else
-                                                $combustivel = $_POST['combustivel'];
-
-                                            if (empty($_POST['kilometragem']))
-                                                $kilometragemErro = "kilometragem é obrigatório!";
-                                            else
-                                                $kilometragem = $_POST['kilometragem'];
-
-                                            if (empty($_POST['placa']))
-                                                $placaErro = "placa é obrigatório!";
-                                            else
-                                                $placa = $_POST['placa'];
-
-                                            if (empty($_POST['cor']))
-                                                $corErro = "cor é obrigatório!";
-                                            else
-                                                $cor = $_POST['cor'];
-
-                                            if (empty($_POST['categoria']))
-                                                $categoriaErro = "categoria é obrigatório";
-                                            else
-                                                $categoria = $_POST['categoria'];
-
-
-                                            if ($kilometragem && $modelo) {
-                                                //Verificar se ja existe o carro
-                                                $sql = $pdo->prepare("SELECT * FROM carros WHERE modelo = ?");
-                                                if ($sql->execute(array($modelo))) {
-                                                    if ($sql->rowCount() <= 0) {
-                                                        $sql = $pdo->prepare("INSERT INTO carros (codCarro, marca, nome, modelo, preco, ano, cambio, portas, combustivel, kilometragem, placa, cor, imagem1, imagem2, imagem3, imagem4, categoria)
-                                                VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                                                        if ($sql->execute(array($marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent1, $imgContent2, $imgContent3, $imgContent4, $categoria))) {
-                                                            $msgErro = "Dados cadastrados com sucesso!";
-                                                            $nome = "";
-                                                            $modelo = "";
-                                                            $preco = "";
-                                                            $ano = "";
-                                                            $cambio = "";
-                                                            $portas = "";
-                                                            $combustivel = "";
-                                                            $kilometragem = "";
-                                                            $placa = "";
-                                                            $cor = "";
-                                                            $categoria = "";
-                                                            header('location:listCarro.php');
-                                                        } else {
-                                                            $msgErro = "Dados não cadastrados!";
-                                                        }
-                                                    } else {
-                                                        $msgErro = "Email de usuário já cadastrado!!";
-                                                    }
+                                    if ($kilometragem && $modelo) {
+                                        //Verificar se ja existe o carro
+                                        $sql = $pdo->prepare("SELECT * FROM carros WHERE modelo = ?");
+                                        if ($sql->execute(array($modelo))) {
+                                            if ($sql->rowCount() <= 0) {
+                                                $sql = $pdo->prepare("INSERT INTO carros (codCarro, marca, nome, modelo, preco, ano, cambio, portas, combustivel, kilometragem, placa, cor, imagem1, imagem2, imagem3, imagem4, categoria,descricao)
+                                                VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+                                                if ($sql->execute(array($marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent1, $imgContent2, $imgContent3, $imgContent4, $categoria, $descricao))) {
+                                                    $msgErro = "Dados cadastrados com sucesso!";
+                                                    $nome = "";
+                                                    $modelo = "";
+                                                    $preco = "";
+                                                    $ano = "";
+                                                    $cambio = "";
+                                                    $portas = "";
+                                                    $combustivel = "";
+                                                    $kilometragem = "";
+                                                    $placa = "";
+                                                    $cor = "";
+                                                    $categoria = "";
+                                                    $descricao = "";
+                                                    header('location:listCarro.php');
                                                 } else {
-                                                    $msgErro = "Erro no comando SELECT!";
+                                                    $msgErro = "Dados não cadastrados!";
                                                 }
                                             } else {
-                                                $msgErro = "Dados não cadastrados!";
+                                                $msgErro = "Email de usuário já cadastrado!!";
                                             }
                                         } else {
-                                            $msgErro = "Somente arquivos JPG, JPEG, PNG e GIFF são permitidos";
+                                            $msgErro = "Erro no comando SELECT!";
                                         }
                                     } else {
-                                        $msgErro = "Imagem não selecionada!!";
+                                        $msgErro = "Dados não cadastrados!";
                                     }
                                 } else {
-                                    $msgErro = "Imagem não selecionada!!";
+                                    $msgErro = "Somente arquivos JPG, JPEG, PNG e GIFF são permitidos";
                                 }
                             } else {
                                 $msgErro = "Imagem não selecionada!!";
@@ -200,11 +195,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                         } else {
                             $msgErro = "Imagem não selecionada!!";
                         }
+                    } else {
+                        $msgErro = "Imagem não selecionada!!";
                     }
+                } else {
+                    $msgErro = "Imagem não selecionada!!";
                 }
             }
         }
-   
+    }
+}
+
 
 ?>
 
@@ -259,6 +260,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
                 Categoria: <input type="text" name="categoria" value="<?php echo $categoria ?>">
                 <span class="obrigatorio">*<?php echo $categoriaErro ?></span>
+
+                descrição: <input type="text" name="descricao" value="<?php echo $descricao ?>">
+                <span class="obrigatorio">*<?php echo $descricaoErro ?></span>
 
                 <input type="file" name="image1">
 

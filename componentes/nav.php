@@ -23,7 +23,7 @@ session_start();
           <a class="nav-link active" href="#">Redes sociais</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="login.php">Login</a>
+          <a class="nav-link active" href="componentes/login.php">Login</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,6 +43,8 @@ session_start();
         </li>
         <?php
         }
+
+        
         ?>
        
         

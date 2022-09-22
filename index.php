@@ -7,9 +7,6 @@ include 'componentes/nav.php'
 <div style="display: flex; flex-direction: row; align-items: center; justify-content:space-between; margin-left:10px"  >
 <?php if (isset($_SESSION['nome'])){?>
 
-   <div style="margin-top:8px"> <p style="font-size:20px; margin-right:10px; color:white; background-color: #0C2A43; border-radius:10px">Olá <?php echo $_SESSION['nome']?>!!</p></div>
-    
-    <p style="font-size:15px; color:white; background-color:#0C2A43; border-radius:8px; margin-right:10px "><a style="text-decoration:none; color:white;  " href="logout.php">Logout</a></p>
   <?php } else {?>
     <h1 style=" margin-left:5px;color:white; font-size:12px" >Você não esta logado, faça o login para acessar todas as funcionalidades do site!</h1>
 
@@ -31,7 +28,7 @@ include 'componentes/nav.php'
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Quer comprar um carro novo?</h5>
           <p style="color: white;">Conte com a gente!</p>
-          <button class="btn main-btn" style="background-color:#0C2A43; color:white;">Saiba mais</button>
+         <a href="catalogo.php"> <button  href="catalogo.php"  class="btn main-btn" style="background-color:#0C2A43; color:white;">Saiba mais</button></a>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
@@ -41,7 +38,7 @@ include 'componentes/nav.php'
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Ou quer alugar um carro?</h5>
           <p style="color: white;">Pra sua sorte, nós tambem alugamos</p>
-          <button class="btn main-btn" style="background-color:#0C2A43; color:white;">Saiba mais</button>
+       <a href="alugar.php"><button class="btn main-btn" style="background-color:#0C2A43; color:white;">Saiba mais</button></a>
         </div>
       </div>
       <div class="carousel-item">
@@ -51,7 +48,7 @@ include 'componentes/nav.php'
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Marque um teste drive aqui</h5>
           <p style="color: white;">Mas faça o seu cadastro</p>
-          <button class="btn main-btn" style="background-color:#0C2A43; color:white;">Saiba mais</button>
+         <a href="test_drive.php"><button class="btn main-btn" style="background-color:#0C2A43; color:white;">Saiba mais</button></a>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <?php
-include "include/MySql.php";
-include "include/functions.php";
+include "../include/MySql.php";
+include "../include/functions.php";
 
 session_start();
 $_SESSION['nome'] = "";
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 foreach ($info as $key => $values) {
                     $_SESSION['nome'] = $values['nome'];
                     $_SESSION['administrador'] = $values['administrador'];
-                    header('location:index.php');
+                    header('location:../index.php');
                 }
             } else {
                 $msgErro = "Usuario não cadastrado";
@@ -65,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
+    <div style="justify-content: center; display:flex; margin:0 auto">
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
         <legend>Login</legend>
 
@@ -81,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     </form>
     <span><?php echo $msgErro ?></span>
-
+</div>
     <style>
         legend {
             color: white;
@@ -122,9 +123,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         form {
             background: #2f3640;
             padding: 30px;
-            margin: 300px 700px;
+            margin-top: 300px;
             height: 350px;
-            width: 350px;
             border-radius: 12px;
         }
 
@@ -152,6 +152,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-weight: normal;
             margin-left: 50px;
             
+        }
+
+        body{
+            margin: 0 auto;
         }
     </style>
 

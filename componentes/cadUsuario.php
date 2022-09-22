@@ -5,7 +5,7 @@ $nome = "";
 $email = "";
 $telefone = "";
 $senha = "";
-$administrador=0;
+$administrador= 0;
 
 
 $nomeErro = "";

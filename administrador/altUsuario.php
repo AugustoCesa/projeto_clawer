@@ -1,5 +1,5 @@
 <?php
-    include "include/MySql.php";
+    include "../include/MySql.php";
 
     $codigo = "";
     $nome = "";

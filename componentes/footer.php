@@ -1,6 +1,5 @@
 <?php
 
-
 $nome = "";
 $email = "";
 $mensageUser="";
@@ -18,7 +17,7 @@ else
     $nome = $_POST['nome'];
 
 if (empty($_POST['email']))
-    $emailErro = "email é obrigatório!";
+    $emailErro = "Email é obrigatório!";
 else
     $email = $_POST['email'];
 
@@ -42,7 +41,7 @@ if ($nome && $mensageUser) {
                 $mensageUser = "";
 
             } else {
-                $msgErro = "Dados não cadastrados!";
+                $msgErro = "Dados não enviados!";
             }
         } else {
             $msgErro = "mensagem de usuário já enviada!";
@@ -96,13 +95,13 @@ if ($nome && $mensageUser) {
             <fieldset style="display: flex; flex-direction: column; width:100%">
             
                 nome: <input type="text" name="nome" style="width: 400px; width:100%; border-radius:15px" value="<?php echo $nome ?>">
-                <span class="obrigatorio"style="font-size: x-small" >*<?php echo $nomeErro ?></span>
+                <span class="obrigatorio"style="font-size: x-small" ><?php echo $nomeErro ?></span>
                 
                 email: <input type="email" style="border-radius:15px" name="email" value="<?php echo $email ?>">
-                <span class="obrigatorio" style="font-size: x-small">*<?php echo $emailErro ?></span>
+                <span class="obrigatorio" style="font-size: x-small"><?php echo $emailErro ?></span>
                 
                 Mensagem: <input type="text" style= "height:60px" name="mensage" value="<?php echo $mensageUser ?>">
-                <span class="obrigatorio" style="font-size: x-small;">*<?php echo $mensageErro ?></span>
+                <span class="obrigatorio" style="font-size: x-small;"><?php echo $mensageErro ?></span>
                 
 
                 
