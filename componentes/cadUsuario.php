@@ -1,5 +1,5 @@
 <?php
-include "include/MySql.php";
+include "../include/MySql.php";
 
 $nome = "";
 $email = "";
@@ -188,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
         }
 
         body {
-            background-color: #0C2A43;
+            background:blue;
         }
 
         .obrigatorio {

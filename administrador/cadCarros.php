@@ -215,15 +215,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Carros</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
-</head>
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+    <style>
 
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    
+        body{
+        background-color:#101c66;
+        color: white;
+    }
+    fieldset{
+        border-radius: 10px;
+        font-family:'Franklin Gothic';
+
+    }
+    input{
+        border-radius: 5px;
+    }
+    
+    </style>
+</head>
 <body>
 
     <div style="display:flex; justify-content:center; font-family:'Franklin Gothic Medium'">
         <form method="POST" enctype="multipart/form-data">
-            <fieldset style="display: flex; flex-direction: column;">
-                <legend>Cadastro de Carro</legend>
+            <fieldset style="display: flex; flex-direction: column; width:20px;">
+                <legend><h1>Cadastro de Carro</h1></legend>
 
                 Marca: <input type="text" name="marca" value="<?php echo $marca ?>">
                 <span class="obrigatorio">*<?php echo $marcaErro ?></span>
