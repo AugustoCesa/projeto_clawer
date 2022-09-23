@@ -41,18 +41,6 @@
         </div>
     </div>
 </body>
-
-<footer>
-<style>
-
-    footer{
-        background-color:#101c66;
-        height: 100px;
-    }
-</style>    
-background
-
-</footer>
 </html>
 <?php
     } else {

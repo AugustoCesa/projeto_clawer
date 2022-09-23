@@ -87,67 +87,67 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
 
                                     if (empty($_POST['marca']))
-                                        $marcaErro = "Marca é obrigatório!";
+                                        $marcaErro = "* Marca é obrigatório!";
                                     else
                                         $marca = $_POST['marca'];
 
                                     if (empty($_POST['nome']))
-                                        $nomeErro = "Nome é obrigatório!";
+                                        $nomeErro = "* Nome é obrigatório!";
                                     else
                                         $nome = $_POST['nome'];
 
                                     if (empty($_POST['modelo']))
-                                        $modeloErro = "Modelo é obrigatório!";
+                                        $modeloErro = "* Modelo é obrigatório!";
                                     else
                                         $modelo = $_POST['modelo'];
 
                                     if (empty($_POST['preco']))
-                                        $precoErro = "preço é obrigatório!";
+                                        $precoErro = "* Preço é obrigatório!";
                                     else
                                         $preco = $_POST['preco'];
 
                                     if (empty($_POST['ano']))
-                                        $anoErro = "ano é obrigatório!";
+                                        $anoErro = "* Ano é obrigatório!";
                                     else
                                         $ano = $_POST['ano'];
 
                                     if (empty($_POST['cambio']))
-                                        $precoErro = "Cambio é obrigatório!";
+                                        $precoErro = "* Cambio é obrigatório!";
                                     else
                                         $cambio = $_POST['cambio'];
 
                                     if (empty($_POST['portas']))
-                                        $portasErro = "Portas é obrigatório!";
+                                        $portasErro = "* Portas é obrigatório!";
                                     else
                                         $portas = $_POST['portas'];
 
                                     if (empty($_POST['combustivel']))
-                                        $combustivelErro = "preço é obrigatório!";
+                                        $combustivelErro = "* Combustivel é obrigatório!";
                                     else
                                         $combustivel = $_POST['combustivel'];
 
                                     if (empty($_POST['kilometragem']))
-                                        $kilometragemErro = "kilometragem é obrigatório!";
+                                        $kilometragemErro = "* Kilometragem é obrigatório!";
                                     else
                                         $kilometragem = $_POST['kilometragem'];
 
                                     if (empty($_POST['placa']))
-                                        $placaErro = "placa é obrigatório!";
+                                        $placaErro = "* Placa é obrigatório!";
                                     else
                                         $placa = $_POST['placa'];
 
                                     if (empty($_POST['cor']))
-                                        $corErro = "cor é obrigatório!";
+                                        $corErro = "* Cor é obrigatório!";
                                     else
                                         $cor = $_POST['cor'];
 
                                     if (empty($_POST['categoria']))
-                                        $categoriaErro = "categoria é obrigatório";
+                                        $categoriaErro = "* Categoria é obrigatório";
                                     else
                                         $categoria = $_POST['categoria'];
 
                                     if (empty($_POST['descricao']))
-                                        $descricaoErro = "descrição é obrigatório";
+                                        $descricaoErro = "* Descrição é obrigatório";
                                     else
                                         $descricao = $_POST['descricao'];
 
@@ -223,19 +223,43 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
         body{
         background-color:#101c66;
         color: white;
+        font-family:'Franklin Gothic';
     }
     fieldset{
         border-radius: 10px;
-        font-family:'Franklin Gothic';
 
     }
-    input{
+    input .botao{
+        border-radius: 10px;
+    }
+    .titulo ul{
+        list-style: none;
+        justify-content: space-between;
+        display: flex;
+        margin: 0 auto;
+
+    }
+    .titulo ul img {
         border-radius: 5px;
+        padding-top: 10px;
+        margin-right: 20px;
+    }
+    .titulo ul h1{
+        background-color:#101c66;
     }
     
     </style>
 </head>
 <body>
+    <div class="titulo">
+       <nav>
+            <ul>
+                <li><h1>Cadastro de Carros</h1></li>
+                <li><a href="../index.php"><img src="../assets/images/logo.jpg" alt="Logo do site" width="150"></a></li>
+            </ul>
+       </nav>
+       <hr>
+    </div>
 
     <div style="display:flex; justify-content:center; font-family:'Franklin Gothic Medium'">
         <form method="POST" enctype="multipart/form-data">
@@ -243,44 +267,44 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                 <legend><h1>Cadastro de Carro</h1></legend>
 
                 Marca: <input type="text" name="marca" value="<?php echo $marca ?>">
-                <span class="obrigatorio">*<?php echo $marcaErro ?></span>
+                <span class="obrigatorio"><?php echo $marcaErro ?></span>
                 <br>
                 Nome: <input type="text" name="nome" value="<?php echo $nome ?>">
-                <span class="obrigatorio">*<?php echo $nomeErro ?></span>
+                <span class="obrigatorio"><?php echo $nomeErro ?></span>
                 <br>
                 Modelo: <input type="text" name="modelo" value="<?php echo $modelo ?>">
-                <span class="obrigatorio">*<?php echo $modeloErro ?></span>
+                <span class="obrigatorio"><?php echo $modeloErro ?></span>
                 <br>
                 Preço: <input type="text" name="preco" value="<?php echo $preco ?>">
-                <span class="obrigatorio">*<?php echo $precoErro ?></span>
+                <span class="obrigatorio"><?php echo $precoErro ?></span>
                 <br>
                 Ano: <input type="text" name="ano" value="<?php echo $ano ?>">
-                <span class="obrigatorio">*<?php echo $anoErro ?></span>
+                <span class="obrigatorio"><?php echo $anoErro ?></span>
                 <br>
                 Cambio: <input type="text" name="cambio" value="<?php echo $cambio ?>">
-                <span class="obrigatorio">*<?php echo $cambioErro ?></span>
+                <span class="obrigatorio"><?php echo $cambioErro ?></span>
                 <br>
                 Portas: <input type="text" name="portas" value="<?php echo $portas ?>">
-                <span class="obrigatorio">*<?php echo $portasErro ?></span>
+                <span class="obrigatorio"><?php echo $portasErro ?></span>
                 <br>
                 Combustivel: <input type="text" name="combustivel" value="<?php echo $combustivel ?>">
-                <span class="obrigatorio">*<?php echo $combustivelErro ?></span>
+                <span class="obrigatorio"><?php echo $combustivelErro ?></span>
                 <br>
                 kilometragem: <input type="text" name="kilometragem" value="<?php echo $kilometragem ?>">
-                <span class="obrigatorio">*<?php echo $kilometragemErro ?></span>
+                <span class="obrigatorio"><?php echo $kilometragemErro ?></span>
                 <br>
                 Placa: <input type="text" name="placa" value="<?php echo $placa ?>">
-                <span class="obrigatorio">*<?php echo $placaErro ?></span>
+                <span class="obrigatorio"><?php echo $placaErro ?></span>
                 <br>
                 Cor: <input type="text" name="cor" value="<?php echo $cor ?>">
-                <span class="obrigatorio">*<?php echo $corErro ?></span>
-
+                <span class="obrigatorio"><?php echo $corErro ?></span>
+                <br>
                 Categoria: <input type="text" name="categoria" value="<?php echo $categoria ?>">
-                <span class="obrigatorio">*<?php echo $categoriaErro ?></span>
-
+                <span class="obrigatorio"><?php echo $categoriaErro ?></span>
+                <br>
                 descrição: <input type="text" name="descricao" value="<?php echo $descricao ?>">
-                <span class="obrigatorio">*<?php echo $descricaoErro ?></span>
-
+                <span class="obrigatorio"><?php echo $descricaoErro ?></span>
+                <br>
                 <input type="file" name="image1">
 
                 <input type="file" name="image2">
@@ -291,7 +315,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
 
                 <br>
-                <input type="submit" value="Salvar" name="submit">
+                <input class="botao" type="submit" value="Salvar" name="submit">
             </fieldset>
         </form>
     </div>
