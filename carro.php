@@ -1,8 +1,14 @@
 <?php
 include "componentes/nav.php";
+$idCarro= 0;
+$where ="";
+if(isset($_GET['id'])){
+    $idCarro = $_GET['id'];
 
+    $where = "WHERE  CodCarro = $idCarro";
+}
 $strcon = mysqli_connect('localhost', 'root', '', 'projeto') or die("Erro ao conectar o banco");
-$sql = "SELECT * FROM CARROS";
+$sql = "SELECT * FROM CARROS $where" ;
 $resultado = mysqli_query($strcon, $sql) or die('Erro ao consultar o catálgo');
 
 
@@ -168,6 +174,8 @@ if (mysqli_num_rows($resultado) > 0) {
         </html>
 <?php
     }
+}else{
+    echo "<h1> Nenhum carro encontrado!</h1> ";
 }
 ?>
 <?php include 'componentes/footer.php' ?>

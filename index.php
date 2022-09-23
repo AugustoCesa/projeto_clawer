@@ -23,7 +23,7 @@ include 'componentes/nav.php'
 
     <div class="carousel-inner" style="border-radius: 20px; width:1000px; border:solid #0C2A43 6px; ">
       <div class="carousel-item active" data-bs-interval="10000">
-        <img src="assets/images/chiron.png" style="height: 600px; width:100%" class="d-block w-100 img-fluid" alt="...">
+        <img src="assets/images/chiron.png" style="height: 600px; width:100%" class="d-block w-100 img-fluid" alt="..." class="img-fluid">
 
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Quer comprar um carro novo?</h5>
