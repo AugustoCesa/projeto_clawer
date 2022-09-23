@@ -17,7 +17,6 @@ $imgContent1="";
 $imgContent2="";
 $imgContent3="";
 $imgContent4="";
-$categoria="";
 
 $marcaErro = "";
 $nomeErro = "";
@@ -30,7 +29,7 @@ $combustivelErro = "";
 $kilometragemErro = "";
 $placaErro = "";
 $corErro = "";
-$categoriaErro="";
+
 
 
 if (isset($_GET['id'])) {
@@ -55,7 +54,6 @@ if (isset($_GET['id'])) {
             $imgContent2 = $dados['imagem2'];
             $imgContent3 = $dados['imagem3'];
             $imgContent4 = $dados['imagem4'];
-            $categoria =  $dados['categoria'];
         }
     }
 }
@@ -117,11 +115,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
         $corErro = "cor é obrigatório!";
     else
         $cor = $_POST['cor'];
-
-        if (empty($_POST['categoria']))
-        $categoriaErro = "categoria é obrigatório!";
-    else
-        $categoria = $_POST['categoria'];
 
 
 
@@ -207,10 +200,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                                                              imagem2=?,
                                                              imagem3=?,
                                                              imagem4=?,
-                                                             categoria=?
                                                        WHERE CodCarro=?");
 
-                if ($sql->execute(array($codigo, $marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent1, $imgContent2, $imgContent3, $imgContent4, $categoria, $codigo))) {
+                if ($sql->execute(array($codigo, $marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent1, $imgContent2, $imgContent3, $imgContent4, $codigo))) {
                     echo   $msgErro = "<span> Dados alterados com sucesso! </span>";
                     header('location:listCarro.php');
                 } else {
@@ -269,9 +261,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                 <br>
                 kilometragem: <input type="text" name="kilometragem" value="<?php echo $kilometragem ?>">
                 <span class="obrigatorio">*<?php echo $kilometragemErro ?></span>
-                <br>
-                Categoria <input type="text" name="placa" value="<?php echo $categoria ?>">
-                <span class="obrigatorio">*<?php echo $categoriaErro ?></span>
                 <br>
                 Placa: <input type="text" name="placa" value="<?php echo $placa ?>">
                 <span class="obrigatorio">*<?php echo $placaErro ?></span>

@@ -20,7 +20,6 @@ if ($sql->execute()) {
     echo "  <th>kilometragem</th>";
     echo "  <th>placa</th>";
     echo "  <th>cor</th>";
-    echo "  <th>categoria</th>";
     echo "  <th>preco</th>";
     echo "  <th>imagem1</th>";
     echo "  <th>imagem2</th>";
@@ -47,7 +46,6 @@ if ($sql->execute()) {
         echo "<td>" . $value['kilometragem'] . "</td>";
         echo "<td>" . $value['placa'] . "</td>";
         echo "<td>" . $value['cor'] . "</td>";
-        echo "<td>" . $value['categoria'] . "</td>";
         echo "<td>" . $value['preco'] . "</td>";
 
         $imagem = $value['imagem1'];
