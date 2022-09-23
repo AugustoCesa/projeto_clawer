@@ -12,7 +12,7 @@ include 'componentes/nav.php'
 
     <?php } ?>
 </div>
-<main style="margin:20px; ">
+<main style="margin-top:130px ">
 
   <div id="carouselExampleDark" style="width: 100%; display:flex; justify-content:center" class="carousel carousel-dark slide text-center" data-bs-ride="carousel">
     <div class="carousel-indicators">

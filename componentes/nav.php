@@ -19,14 +19,13 @@ session_start();
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="Redes_sociais.php">Redes sociais</a>
-        </li>
+
         <li class="nav-item">
           <a class="nav-link active" href="componentes/login.php">Login</a>
         </li>
+
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
             Serviços
           </a>
           <ul class="dropdown-menu">
@@ -37,6 +36,20 @@ session_start();
             <li><a class="dropdown-item" href="#">lojas</a></li>
           </ul>
         </li>
+
+        
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+            Redes Socias
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://www.instagram.com/clawerautomoveisoficial/">Instagram</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://twitter.com/compose/tweet">Twitter</a></li>
+          </ul>
+        </li>
+
         <?php if ($_SESSION['administrador']==1){?>
         <li class="nav-item">
           <a class="nav-link active" href="administrador/intAdm.php">Administrador</a>

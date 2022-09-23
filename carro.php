@@ -1,14 +1,14 @@
 <?php
 include "componentes/nav.php";
-$idCarro= 0;
-$where ="";
-if(isset($_GET['id'])){
+$idCarro = 0;
+$where = "";
+if (isset($_GET['id'])) {
     $idCarro = $_GET['id'];
 
     $where = "WHERE  CodCarro = $idCarro";
 }
 $strcon = mysqli_connect('localhost', 'root', '', 'projeto') or die("Erro ao conectar o banco");
-$sql = "SELECT * FROM CARROS $where" ;
+$sql = "SELECT * FROM CARROS $where";
 $resultado = mysqli_query($strcon, $sql) or die('Erro ao consultar o catálgo');
 
 
@@ -67,7 +67,7 @@ if (mysqli_num_rows($resultado) > 0) {
 
                     <div class="small-img-group pt-2">
                         <div class="small-img-col border border-4 border-dark">
-                            <img class="small-img img-fluid" src= "data:image/jpg;charset=utf8;base64, <?php echo base64_encode($imagem1) ?>" width="150px" alt="">
+                            <img class="small-img img-fluid" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($imagem1) ?>" width="150px" alt="">
                         </div>
                         <div class="small-img-col border border-4 border-dark">
                             <img class="small-img img-fluid" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($imagem2) ?>" width="150px" alt="">
@@ -76,78 +76,84 @@ if (mysqli_num_rows($resultado) > 0) {
                             <img class="small-img img-fluid " src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($imagem3) ?>" width="150px" alt="">
                         </div>
                         <div class="small-img-col border border-4 border-dark">
-                            <img class="small-img img-fluid" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($imagem4) ?>"width="150px" alt="">
+                            <img class="small-img img-fluid" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($imagem4) ?>" width="150px" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-12 col-12">
                     <div class="dados">
-                       <h3> <?php echo $marca . "/".$nome ?></h3> 
+                        <h3> <?php echo $marca . "/" . $nome ?></h3>
 
-                        <h1> <?php echo $preco ?></h1>
+                    </div>
+                    <div class="descricao">
+
+
+                        <p>
+                            <?php echo $descricao ?>
+                        </p>
+                    </div>
+                    <h2> <?php echo $preco ?></h2>
+                    <?php if (mb_strtolower($categoria) == 'comprar') { ?>
+
                         <button type="button" href="#" class="btn btn-success">Comprar</button>
+
+                    <?php  } else { ?>
+                        <button type="button" href="#" class="btn" style="background-color: yellow; color:black;">Alugar</button>
+                    <?php } ?>
+                </div>
+                <hr style="width: 100%; color:black; height:8px">
+                <div class="col-lg-5 col-md-12 col-12">
+                    <h2>Informações do veiculo</h2>
+                    <div class="info" style="font-size: 15px;">
+                        <ul>
+                            <hr>
+                            <li>
+
+                                <h5>Marca</h5>
+                            </li>
+                            <p><?php echo $marca ?></p>
+                            <hr>
+                            <li>
+                                <h5>Modelo</h5>
+                            </li>
+                            <p><?php echo $modelo ?></p>
+                            <hr>
+                            <li>
+                                <h5>Ano</h5>
+                            </li>
+                            <p><?php echo $ano ?></p>
+                            <hr>
+                            <li>
+                                <h5>Cambio</h5>
+                            </li>
+                            <p><?php echo $cambio ?></p>
+                            <hr>
+                            <li>
+                                <h5>Portas</h5>
+                            </li>
+                            <p><?php echo $portas ?></p>
+                            <hr>
+                            <li>
+                                <h5>Combustivel</h5>
+                            </li>
+                            <p><?php echo $combustivel ?></p>
+                            <hr>
+                            <li>
+                                <h5>KM</h5>
+                            </li>
+                            <p><?php echo $kilometragem ?></p>
+                            <hr>
+                            <li>
+                                <h5>Placa</h5>
+                            </li>
+                            <p><?php echo $placa ?></p>
+                            <hr>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="descricao">
-                <h2>Descrição</h2>
 
-                <p>
-                  <?php  echo $descricao ?>
-                   </p>
-            </div>
-            <hr>
 
-            <div class="col-lg-5 col-md-12 col-12">
-                <h2>Informações do veiculo</h2>
-                <div class="info" style="font-size: 15px;">
-                    <ul>
-                        <hr>
-                        <li>
-
-                            <h4>Marca</h4>
-                        </li>
-                        <p><?php echo $marca?></p>
-                        <hr>
-                        <li>
-                            <h4>Modelo</h4>
-                        </li>
-                        <p><?php echo $modelo?></p>
-                        <hr>
-                        <li>
-                            <h4>Ano</h4>
-                        </li>
-                        <p><?php echo $ano ?></p>
-                        <hr>
-                        <li>
-                            <h4>Cambio</h4>
-                        </li>
-                        <p><?php echo $cambio ?></p>
-                        <hr>
-                        <li>
-                            <h4>Portas</h4>
-                        </li>
-                        <p><?php echo $portas ?></p>
-                        <hr>
-                        <li>
-                            <h4>Combustivel</h4>
-                        </li>
-                        <p><?php echo $combustivel ?></p>
-                        <hr>
-                        <li>
-                            <h4>KM</h4>
-                        </li>
-                        <p><?php echo $kilometragem ?></p>
-                        <hr>
-                        <li>
-                            <h4>Placa</h4>
-                        </li>
-                        <p><?php echo $placa ?></p>
-                        <hr>
-                    </ul>
-                </div>
-            </div>
         </section>
 
 
@@ -174,7 +180,7 @@ if (mysqli_num_rows($resultado) > 0) {
         </html>
 <?php
     }
-}else{
+} else {
     echo "<h1> Nenhum carro encontrado!</h1> ";
 }
 ?>

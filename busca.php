@@ -60,19 +60,28 @@ OR categoria LIKE '%$pesquisa%'";
                             /*Card display code goes here*/
 
                     ?>
-                            <?php echo "<a href='carro.php?id=" . $produtos['CodCarro'] . "' "; ?>
+                    <style>
+a{
+    text-decoration: none;
+    color: white;
+}
+
+body, html {
+overflow-x: hidden !important;
+}
+                    </style>
+
                             <div class="container resultado" style=" border:solid #0C2A43 10px;display: flex; flex-direction: column; margin-top: 100px; font-size:22px; background-color:#0C2A43; width: 300px; height: 470px; border-radius: 8px; color:white">
+                                <?php echo "<a href='carro.php?id=" . $dados['CodCarro'] . "' >"; ?>
 
                                 <img style="width:240px; border-radius:11px" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($dados['imagem1']) ?>" class="img-fluid">
-                                <p><strong> Marca: <?php echo $dados['marca']; ?></Strong></p>
+                                <p><strong><?php echo $dados['nome'];?>/<?php echo $dados['modelo']; ?></Strong></p>
                                 <div class="model" style="display: flex;">
-
+                                    
                                     <small>
-                                        <p><?php echo $dados['nome']; ?>/</p>
+                                        <p><?php echo $dados['marca']; ?></p>
                                     </small>
-                                    <small>
-                                        <p><?php echo $dados['modelo']; ?></p>
-                                    </small>
+                                   
 
 
 
@@ -81,7 +90,7 @@ OR categoria LIKE '%$pesquisa%'";
                                     <p><?php echo $dados['categoria'] ?></p>
                                 </strong>
                                 <p style="font-size: 29px;"><strong><?php echo $dados['preco']; ?></strong></p>
-
+                                </a>
 
                             </div>
                     <?php
