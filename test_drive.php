@@ -4,32 +4,27 @@ include "componentes/nav.php"
 <br>
 <div class="container">
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilllo.css">
+</head>
+<body>
+    
+</body>
+</html>
 
     <h1 class="words">Selecione um veículo</label></h1>
 
     <select>
-        <option class="fonte" selected="" disabled="disabled"="">Modelo</option>
+        <option class="fonte" selected="" disabled="disabled">Modelo</option>
         <option class="fonte">Koenigsegg Agera</option>
-        <option class="fonte">Koenigsegg Jesko</option>
-        <option class="fonte">BMW 7 series</option>
-        <option class="fonte">BMW E3</option>
-        <option class="fonte">Lamborghini Aventador</option>
-        <option class="fonte">Lamborghini Urus</option>
-        <option class="fonte">Mustang GT</option>
-        <option class="fonte">Ford Mustang March1 Classic</option>
-        <option class="fonte">McLaren Coúpe</option>
-        <option class="fonte">McLaren 720S</option>
-        <option class="fonte">Nissan GT-R 2020</option>
-        <option class="fonte">Nissan GT-R Nismo GT500 2017</option>
-        <option class="fonte">Bugatti Divo</option>
-        <option class="fonte">Buggati La Voiture</option>
-        <option class="fonte">Ferrari 488</option>
-        <option class="fonte">Ferrari Modena</option>
-        <option class="fonte">Toyota Supre A80</option>
-        <option class="fonte">Toyota Supra US 2020</option>
     </select>
     <br>
-    <br>
+    
     <h2 class="words">Nome Completo</h2>
     <input type="text" id="textfield_a1ad" placeholder="Nome">
     <br>
@@ -52,15 +47,18 @@ include "componentes/nav.php"
 
 </div>
 <br>
-<div class="tamanho">
-    <input type="checkbox" id="checkbox_cbf6" style="   
-    height: 100px;
-    width: 100px;
-    margin-top: -32px;">
+<div class="tamanho" style="display: flex;flex-direction:column; text-align:center; margin:20px" >
 
     <label for="checkbox_cbf6">Eu aceito receber informações da Clawer Automóveis e seus parceiros/concessionárias,
         pelos meios de comunicação informados por mim acima, para divulgação de Ofertas, Anúncios de produtos e serviços,
         Clawer e ações de tal em sua Rede de concessionárias.</label>
+        
+        <input type="checkbox" id="checkbox_cbf6" style="   
+ height: 30px;
+ width: 30px;
+ margin-left: 50px
+ 
+ ">
 </div>
 <br>
 <div class="container">
