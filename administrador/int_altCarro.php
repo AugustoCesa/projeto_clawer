@@ -1,6 +1,58 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <style>
+            body{
+                background-color:#101c66;
+                color: white;
+                font-family:'Franklin Gothic';
+            }
+            fieldset{
+                border-radius: 10px;
+
+            }
+            input .botao{
+                border-radius: 10px;
+            }
+            .titulo ul{
+                list-style: none;
+                justify-content: space-between;
+                display: flex;
+                margin: 0 auto;
+
+            }
+            .titulo ul img {
+                border-radius: 5px;
+                padding-top: 10px;
+                margin-right: 20px;
+            }
+            .titulo ul h1{
+                background-color:#101c66;
+            }
+
+
+        </style>
+
+        </head>
+        <body>
+            <div class="titulo">
+            <nav>
+                    <ul>
+                        <li><h1>Alteração de Cadastro de Carro</h1></li>
+                        <li><a href="../index.php"><img src="../assets/images/logo.jpg" alt="Logo do site" width="150"></a></li>
+                    </ul>
+            </nav>
+            <hr>
+            </div>
+        </body>
+        </html>
+
+        
 <?php
-
-
 include "../include/MySql.php";
 
 $sql = $pdo->prepare('SELECT * FROM carros');

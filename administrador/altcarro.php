@@ -228,6 +228,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <title>Cadastro de Carro</title>
     <link rel="stylesheet" href="../assets/css/estilo.css">
+
+
+
 </head>
 
 <body>
