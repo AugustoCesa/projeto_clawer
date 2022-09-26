@@ -1,74 +1,80 @@
 <?php
-include "componentes/nav.php"
+include "componentes/nav.php";
+include "include/verifica.php";
+$idCarro = 0;
+$idPessoa = 0;
+$where = "";
+$whereP = "";
+
+if (isset($_SESSION['nome'])) {
+
+    ///////////// Puxando o Carro
+
+    if (isset($_GET['id'])) {
+        $idCarro = $_GET['id'];
+
+        $where = "WHERE  CodCarro = $idCarro";
+    }
+
+
+    $sql = $pdo->prepare('SELECT nome FROM carros ' . $where);
+    if ($sql->execute()) {
+        $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($info as $key => $valueCarro) {
+
+            //////////////// Puxando o Usuário
+
+            if (isset($_SESSION['codigo'])) {
+                $idPessoa = $_SESSION['codigo'];
+
+                $whereP = "WHERE  codigo = $idPessoa";
+            }
+
+            $sql = $pdo->prepare('SELECT * FROM usuario ' . $whereP);
+            if ($sql->execute()) {
+                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($info as $key => $valuePessoa) {
+                    
 ?>
-<br>
-<div class="container">
+                    <br>
+                    <div class="container" style="color: white;">
+                        <h1 class="words">Veiculo selecionado</label></h1>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/estilllo.css">
-</head>
-<body>
-    
-</body>
-</html>
+                        <input type="text" value="<?php echo $valueCarro['nome'] ?>" disabled>
+                        <br>
 
-    <h1 class="words">Selecione um veículo</label></h1>
+                        <h2 class="words">Seu Nome Completo</h2>
+                        <input type="text" id="textfield_a1ad" value="<?php echo $valuePessoa['nome'] ?>" disabled>
+                        <br>
+                        <h2 class="words">Telefone</h2>
+                        <input type="tel" id="textfield_a1ad"  value="<?php echo $valuePessoa['telefone'] ?>" disabled>
+                        <br>
+                        <h2 class="words">Email</h2>
+                        <input type="email" id="textfield_a1ad"  value="<?php echo $valuePessoa['email'] ?>" disabled>
+                        <br>
+                        <h2 class="words">Escolha a concencionária mais próxima</h2>
+                        <input type="search" id="Location-2" placeholder="Escolha uma cidade">
+                        <br>
+                        <div style="display: flex; flex-direction:row">
+                        <input type="checkbox" style="width:20px"> <p style="margin-top: 14px; margin-left:5px">estou ciente que serei avisado sobre a minha solicitação! Por email.</p>
+                        </div>
+                        <br>
+                        <input type="submit" name="enviar">
 
-    <select>
-        <option class="fonte" selected="" disabled="disabled">Modelo</option>
-        <option class="fonte">Koenigsegg Agera</option>
-    </select>
-    <br>
-    
-    <h2 class="words">Nome Completo</h2>
-    <input type="text" id="textfield_a1ad" placeholder="Nome">
-    <br>
-    <br>
-    <h2 class="words">Telefone</h2>
-    <input type="tel" id="textfield_a1ad" placeholder="9999999999999">
-    <br>
-    <br>
-    <h2 class="words">Email</h2>
-    <input type="email" id="textfield_a1ad" placeholder="@gmail.com">
-    <br>
-    <br>
-    <h2 class="words">CPF</h2>
-    <input type="number" id="textfield_a1ad" placeholder="155.759.324-34">
-    <br>
-    <br>
-    <h2 class="words">Escolha uma concessionária</h2>
-    <input type="search" id="Location-2" placeholder="Escolha uma cidade">
-    <br>
+                        <br>
 
-</div>
-<br>
-<div class="tamanho" style="display: flex;flex-direction:column; text-align:center; margin:20px" >
-
-    <label for="checkbox_cbf6">Eu aceito receber informações da Clawer Automóveis e seus parceiros/concessionárias,
-        pelos meios de comunicação informados por mim acima, para divulgação de Ofertas, Anúncios de produtos e serviços,
-        Clawer e ações de tal em sua Rede de concessionárias.</label>
-        
-        <input type="checkbox" id="checkbox_cbf6" style="   
- height: 30px;
- width: 30px;
- margin-left: 50px
- 
- ">
-</div>
-<br>
-<div class="container">
-    <div class="color">
-        <input type="submit" name="enviarSol" value="Enviar" style="
-    height: 45px;
-    width: 70px;"></input>
-    </div>
-</div>
-<br>
+                    </div>
+                    <br>
+        <?php
+                }
+            }
+        }
+    } else {
+        ?>
+        <br><br>
+        <h1>deu erro</h1>
 <?php
+    }
+}
 include "componentes/footer.php"
 ?>

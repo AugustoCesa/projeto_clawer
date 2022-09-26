@@ -82,7 +82,7 @@ if (mysqli_num_rows($resultado) > 0) {
                 </div>
                 <div class="col-lg-5 col-md-12 col-12">
                     <div class="dados">
-                        <h3> <?php echo $marca . "/" . $nome ?></h3>
+                        <h3> <?php echo  "<h2>" .$marca .  $nome ."</h2>" ?></h3>
 
                     </div>
                     <div class="descricao">
@@ -96,11 +96,11 @@ if (mysqli_num_rows($resultado) > 0) {
                     <?php if (mb_strtolower($categoria) == 'comprar') { ?>
 
                         <button type="button" href="#" class="btn btn-success">Comprar</button>
-                       <a href="test_drive.php"><button type="button" href="test_drive.php" class="btn btn-success" style="background-color: gray; color:white">Teste-drive</button></a>
+                       <?php echo "<a href='test_drive.php?id=" . $produtos['CodCarro'] . "' "; ?><button type="button" href="test_drive.php" class="btn btn-success" style="background-color: gray; color:white">Teste-drive</button></a>
 
                     <?php  } else { ?>
                         <button type="button" href="#" class="btn" style="background-color: yellow; color:black;">Alugar</button>
-                     <a href="test_drive.php"><button type="button" href="test_drive.php" class="btn btn-success" style="background-color: gray; color:white">Teste-drive</button></a>
+                        <?php echo "<a href='test_drive.php?id=" . $produtos['CodCarro'] . "' ";?> <button type="button" href="test_drive.php" class="btn btn-success" style="background-color: gray; color:white">Teste-drive</button></a>
                     <?php } ?>
                 </div>
                 <hr style="width: 100%; color:black; height:8px">
