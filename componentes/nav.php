@@ -30,7 +30,7 @@ session_start();
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="alugar.php">Alugar carro</a></li>
-            <li><a class="dropdown-item" href="test_drive.php">Agendar test-drive</a></li>
+            <li><a class="dropdown-item" href="catalogo.php">Agendar test-drive</a></li>
             <li><a class="dropdown-item" href="catalogo.php">Catálogo</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">lojas</a></li>

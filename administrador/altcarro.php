@@ -199,7 +199,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                                                              imagem1=?,
                                                              imagem2=?,
                                                              imagem3=?,
-                                                             imagem4=?,
+                                                             imagem4=?
                                                        WHERE CodCarro=?");
 
                 if ($sql->execute(array($codigo, $marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent1, $imgContent2, $imgContent3, $imgContent4, $codigo))) {

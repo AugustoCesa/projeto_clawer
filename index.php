@@ -23,7 +23,7 @@ include 'componentes/nav.php'
 
     <div class="carousel-inner" style="border-radius: 20px; width:1000px; border:solid #0C2A43 6px; ">
       <div class="carousel-item active" data-bs-interval="10000">
-        <img src="assets/images/chiron.png" style="height: 600px; width:100%" class="d-block w-100 img-fluid" alt="..." class="img-fluid">
+        <img src="assets/images/chiron.png" style="height: 600px; width:100%" class="d-block w-100 img-fluid" alt="..." class="img-fluid" alt="imagem do carrossel">
 
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Quer comprar um carro novo?</h5>
@@ -33,7 +33,7 @@ include 'componentes/nav.php'
       </div>
       <div class="carousel-item" data-bs-interval="2000">
 
-        <img src="assets/images/jesko.png" style="height: 600px; width:100%" class="d-block w-100" alt="...">
+        <img src="assets/images/jesko.png" style="height: 600px; width:100%" class="d-block w-100" alt="imagem do carrossel">
 
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Ou quer alugar um carro?</h5>
@@ -43,12 +43,12 @@ include 'componentes/nav.php'
       </div>
       <div class="carousel-item">
 
-        <img src="assets/images/hellcat.png" style="height: 600px; width:100%" class="d-block w-100" alt="...">
+        <img src="assets/images/hellcat.png" style="height: 600px; width:100%" class="d-block w-100" alt="imagem do carrossel">
 
         <div class="carousel-caption d-none d-md-block">
           <h5 style="color: white;">Marque um teste drive aqui</h5>
           <p style="color: white;">Mas faça o seu cadastro</p>
-         <a href="test_drive.php"><button class="btn main-btn" style="background-color:#0C2A43; color:white;">Saiba mais</button></a>
+         <a href="catalogo.php"><button class="btn main-btn" style="background-color:#0C2A43; color:white;">Saiba mais</button></a>
         </div>
       </div>
     </div>
