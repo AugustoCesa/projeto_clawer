@@ -152,10 +152,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                                         $descricao = $_POST['descricao'];
 
 
-                                    if ($kilometragem && $modelo) {
+                                    if ($placa) {
                                         //Verificar se ja existe o carro
-                                        $sql = $pdo->prepare("SELECT * FROM carros WHERE modelo = ?");
-                                        if ($sql->execute(array($modelo))) {
+                                        $sql = $pdo->prepare("SELECT * FROM carros WHERE placa = ?");
+                                        if ($sql->execute(array($placa))) {
                                             if ($sql->rowCount() <= 0) {
                                                 $sql = $pdo->prepare("INSERT INTO carros (codCarro, marca, nome, modelo, preco, ano, cambio, portas, combustivel, kilometragem, placa, cor, imagem1, imagem2, imagem3, imagem4, categoria,descricao)
                                                 VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");

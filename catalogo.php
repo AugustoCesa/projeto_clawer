@@ -12,7 +12,7 @@ $resultado = mysqli_query($strcon, $sql) or die('Erro ao consultar o catálgo');
     }
 </style>
 <div class="container py-5">
-    <div class="row mt-3">
+    <div class="row mt-3" style="margin: 0 auto; border:0 auto; padding: 0 auto">
         <?php
         if (mysqli_num_rows($resultado) > 0) {
 
