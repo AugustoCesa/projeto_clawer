@@ -6,7 +6,9 @@ $idPessoa = 0;
 $where = "";
 $whereP = "";
 
+
 if (isset($_SESSION['nome'])) {
+    if (isset($_SESSION['nome'])) {
 
     ///////////// Puxando o Carro
 
@@ -81,6 +83,7 @@ if (isset($_SESSION['nome'])) {
         <h1>deu erro</h1>
 <?php
     }
+}
 }
 include "componentes/footer.php"
 ?>

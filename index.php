@@ -137,7 +137,7 @@ $resultado = mysqli_query($strcon, $sql) or die('Erro ao consultar o catálgo');
 </div>
 <?php
         } else {
-            echo "Sem conteudo";
+            echo "<p style: color: white text-align:center>Sem conteudo </p>";
         }
 
 

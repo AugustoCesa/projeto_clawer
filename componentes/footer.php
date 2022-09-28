@@ -105,7 +105,7 @@ if ($nome && $mensageUser) {
                 
 
                 
-                <input type="submit" value="Salvar" name="submit">
+                <input  style="background-color:#0C2A43; color:white; border-radius:10px" type="submit" value="Salvar" name="submit">
             </fieldset>
         </form>
                     </div>
