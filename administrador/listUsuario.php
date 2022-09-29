@@ -1,6 +1,8 @@
 <?php
    include "../include/MySql.php";
 
+// Busca os campos de dados dos usuários 
+
    $sql = $pdo->prepare('SELECT * FROM usuario');
    if ($sql->execute()){
        $info = $sql->fetchAll(PDO::FETCH_ASSOC);

@@ -81,6 +81,8 @@ $resultado = mysqli_query($strcon, $sql) or die('Erro ao consultar o catálgo');
 <div class="container py-5">
     <div class="row mt-3">
         <?php
+//demonstra os carros do site, mas ainda vai ser adicionado o campo de destaque 
+
         if (mysqli_num_rows($resultado) > 0) {
 
             while ($produtos = mysqli_fetch_array($resultado)) {

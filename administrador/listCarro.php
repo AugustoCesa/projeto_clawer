@@ -3,6 +3,8 @@
 
 include "../include/MySql.php";
 
+//Seleciona todos os campos e mostram no site
+
 $sql = $pdo->prepare('SELECT * FROM carros');
 if ($sql->execute()) {
     $info = $sql->fetchAll(PDO::FETCH_ASSOC);

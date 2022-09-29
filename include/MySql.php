@@ -4,7 +4,7 @@
     define('USER', 'root');
     define('PASS','');
     define('PORT', '3306');
-
+//conexão padrão
     try{
         $pdo = new PDO('mysql:host='.HOST.';port='.PORT.';dbname='.DB, 
                        USER,

@@ -1,6 +1,6 @@
 <?php 
 include 'header.php';
-session_start();
+session_start(); //para a sessão continuar ativa
 ?>
 
 
@@ -50,7 +50,7 @@ session_start();
           </ul>
         </li>
 
-        <?php if ($_SESSION['administrador']==1){?>
+        <?php if ($_SESSION['administrador']==1){ //ira aparecer se tiver o login de ADM?>
         <li class="nav-item">
           <a class="nav-link active" href="administrador/intAdm.php">Administrador</a>
         </li>

@@ -1,5 +1,7 @@
 <?php
 
+//variáveis para enviar a mensagem
+
 $nome = "";
 $email = "";
 $mensageUser="";

@@ -2,7 +2,7 @@
 include "../include/MySql.php";
 include "../include/functions.php";
 
-session_start();
+session_start();//iniciar sessão
 $_SESSION['nome'] = "";
 $_SESSION['administrador'] = "";
 
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['nome'] = $values['nome'];
                     $_SESSION['codigo'] = $values['codigo'];
                     $_SESSION['administrador'] = $values['administrador'];
-                    header('location:../index.php');
+                    header('location:../index.php'); //redireciona para a página principal
                 }
             } else {
                 $msgErro = "Usuario não cadastrado";

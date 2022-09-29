@@ -1,3 +1,4 @@
+
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -35,7 +36,7 @@
             }
 
         </style>
-
+<!--  interface de alteração de informções dos carros   -->
         </head>
         <body>
             <div class="titulo">
@@ -51,7 +52,7 @@
     <div class="tabela">
             <?php
 include "../include/MySql.php";
-
+// tabela para escolher o carro que vc quer alterar
 $sql = $pdo->prepare('SELECT * FROM carros');
 if ($sql->execute()) {
     $info = $sql->fetchAll(PDO::FETCH_ASSOC);

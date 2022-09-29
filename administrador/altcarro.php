@@ -1,6 +1,8 @@
 <?php
 include "../include/MySql.php";
 
+//variáveis para os campos da tabela
+
 $codigo = "";
 $marca = "";
 $nome = "";
@@ -18,6 +20,7 @@ $imgContent2="";
 $imgContent3="";
 $imgContent4="";
 
+//variáveis de erro
 $marcaErro = "";
 $nomeErro = "";
 $modeloErro = "";
@@ -30,7 +33,7 @@ $kilometragemErro = "";
 $placaErro = "";
 $corErro = "";
 
-
+//colentando o ID ou código do produto 
 
 if (isset($_GET['id'])) {
     $codigo = $_GET['id'];
@@ -58,6 +61,7 @@ if (isset($_GET['id'])) {
     }
 }
 
+//enviando informções sigilosas por método post
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
@@ -116,14 +120,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     else
         $cor = $_POST['cor'];
 
-
+// Recebimento de arquivos
 
     if (!empty($_FILES["image"]["name"])) {
         //Pegar informações do arquivo
         $fileName = basename($_FILES['image1']['name']);
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
         //Array de extensoes permitidas
-        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+        $allowTypes = array('jpg', 'png', 'jpeg', 'gif'); //tipo de arquivos
         if (in_array($fileType, $allowTypes)) {
             $image = $_FILES['image']['tmp_name'];
             $imgContent1 = file_get_contents($image);
@@ -201,7 +205,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                                                              imagem3=?,
                                                              imagem4=?
                                                        WHERE CodCarro=?");
-
+                    //array para executar todo o código sql
                 if ($sql->execute(array($codigo, $marca, $nome, $modelo, $preco, $ano, $cambio, $portas, $combustivel, $kilometragem, $placa, $cor, $imgContent1, $imgContent2, $imgContent3, $imgContent4, $codigo))) {
                     echo   $msgErro = "<span> Dados alterados com sucesso! </span>";
                     header('location:listCarro.php');

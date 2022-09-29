@@ -11,6 +11,7 @@ $strcon = mysqli_connect('localhost', 'root', '', 'projeto') or die("Erro ao con
 $sql = "SELECT * FROM CARROS $where";
 $resultado = mysqli_query($strcon, $sql) or die('Erro ao consultar o catálgo');
 
+//apóes pegar a id carro escolhido, ele irá apresentar suas demais informações 
 
 ?>
 <style>

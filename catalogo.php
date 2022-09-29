@@ -3,6 +3,8 @@
 $strcon = mysqli_connect('localhost', 'root', '', 'projeto') or die("Erro ao conectar o banco");
 $sql = "SELECT * FROM CARROS";
 $resultado = mysqli_query($strcon, $sql) or die('Erro ao consultar o catálgo');
+
+//seleciona todos os carros da tabela, e os mostra
 ?>
 
 <style>

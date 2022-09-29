@@ -1,6 +1,7 @@
 <?php
 include "../include/MySql.php";
 
+//variaveis dos campos
 $marca = "";
 $nome = "";
 $modelo = "";
@@ -15,6 +16,7 @@ $cor = "";
 $categoria = "";
 $descricao = "";
 
+//variáveis de erro
 $marcaErro = "";
 $nomeErro = "";
 $modeloErro = "";
@@ -29,7 +31,7 @@ $corErro = "";
 $categoriaErro = "";
 $descricaoErro = "";
 
-
+// carregamento e tratamento dos arquivos de imagens
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     if (!empty($_FILES['image1']["name"])) {
         //Pegar informações do arquivo
@@ -85,7 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
                                     /////////////////////////////////////////////////////////////////////
 
-
+                                    //enviando por método post
+                                    
                                     if (empty($_POST['marca']))
                                         $marcaErro = "* Marca é obrigatório!";
                                     else
@@ -217,54 +220,62 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     <title>Cadastro de Carros</title>
     <link rel="stylesheet" href="../assets/css/estilo.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-    
-        body{
-        background-color:#101c66;
-        color: white;
-        font-family:'Franklin Gothic';
-    }
-    fieldset{
-        border-radius: 10px;
+        body {
+            background-color: #101c66;
+            color: white;
+            font-family: 'Franklin Gothic';
+        }
 
-    }
-    input .botao{
-        border-radius: 10px;
-    }
-    .titulo ul{
-        list-style: none;
-        justify-content: space-between;
-        display: flex;
-        margin: 0 auto;
+        fieldset {
+            border-radius: 10px;
 
-    }
-    .titulo ul img {
-        border-radius: 5px;
-        padding-top: 10px;
-        margin-right: 20px;
-    }
-    .titulo ul h1{
-        background-color:#101c66;
-    }
-    
+        }
+
+        input .botao {
+            border-radius: 10px;
+        }
+
+        .titulo ul {
+            list-style: none;
+            justify-content: space-between;
+            display: flex;
+            margin: 0 auto;
+
+        }
+
+        .titulo ul img {
+            border-radius: 5px;
+            padding-top: 10px;
+            margin-right: 20px;
+        }
+
+        .titulo ul h1 {
+            background-color: #101c66;
+        }
     </style>
 </head>
+
 <body>
     <div class="titulo">
-       <nav>
+        <nav>
             <ul>
-                <li><h1>Cadastro de Carros</h1></li>
+                <li>
+                    <h1>Cadastro de Carros</h1>
+                </li>
                 <li><a href="../index.php"><img src="../assets/images/logo.jpg" alt="Logo do site" width="150"></a></li>
             </ul>
-       </nav>
-       <hr>
+        </nav>
+        <hr>
     </div>
 
     <div style="display:flex; justify-content:center; font-family:'Franklin Gothic Medium'">
         <form method="POST" enctype="multipart/form-data">
             <fieldset style="display: flex; flex-direction: column; width:20px;">
-                <legend><h1>Cadastro de Carro</h1></legend>
+                <legend>
+                    <h1>Cadastro de Carro</h1>
+                </legend>
 
                 Marca: <input type="text" name="marca" value="<?php echo $marca ?>">
                 <span class="obrigatorio"><?php echo $marcaErro ?></span>

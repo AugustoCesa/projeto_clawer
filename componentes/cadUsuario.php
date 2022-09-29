@@ -1,12 +1,15 @@
 <?php
 include "../include/MySql.php";
 
+//Variáveis vazias para serem enviadas e preenchidas no input
+
 $nome = "";
 $email = "";
 $telefone = "";
 $senha = "";
 $administrador= 0;
 
+//variáveis de erro
 
 $nomeErro = "";
 $emailErro = "";
@@ -14,6 +17,7 @@ $telefoneErro = "";
 $senhaErro = "";
 $msgErro = "";
 
+//envia por metodo post
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
     if (empty($_POST['nome']))
@@ -36,6 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     else
         $senha = $_POST['senha'];
 
+
+//verifica se vai se um cadastro de administrador
     if (isset($_POST["administrador"]))
         $administrador = 1;
     else

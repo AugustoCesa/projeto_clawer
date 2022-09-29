@@ -4,7 +4,7 @@ include "componentes/nav.php";
 ?>
 
 
-
+<!-- Mostra o card dos produtos através do filtro -->
 
 
 <h4 style=" width:100%; font-family:'Bebas Neue'; color:white; margin:20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Resultados para: <?php print $_GET['busca'] ?></h4>

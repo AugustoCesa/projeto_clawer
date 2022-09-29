@@ -1,6 +1,7 @@
 <?php
     session_start();
     if ($_SESSION['administrador']==1){
+        //verifica se vc é administrador
 ?>
 <!DOCTYPE html>
 <html lang="en">

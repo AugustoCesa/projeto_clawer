@@ -6,6 +6,7 @@ $idPessoa = 0;
 $where = "";
 $whereP = "";
 
+//formulário para enviar ao administrador
 
 if (isset($_SESSION['nome'])) {
     if (isset($_SESSION['nome'])) {
